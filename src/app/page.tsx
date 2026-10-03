@@ -1,4 +1,5 @@
 import GoogleSignInButton from "@/components/GoogleSignInButton";
+import Link from "next/link";
 
 type HomeProps = {
   searchParams: Promise<{ error?: string }>;
@@ -24,6 +25,9 @@ export default async function Home({ searchParams }: HomeProps) {
         )}
 
         <GoogleSignInButton />
+        <Link className="guestBrowseLink" href="/Shop">
+          เข้าใช้งานโดยไม่ล็อกอิน
+        </Link>
       </section>
     </main>
   );

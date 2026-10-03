@@ -5,7 +5,7 @@ export default withAuth({
     signIn: "/",
   },
   callbacks: {
-    authorized: ({ token }) => Boolean(token),
+    authorized: ({ token }) => process.env.ENABLE_AUTH !== "true" || Boolean(token),
   },
 });
 
