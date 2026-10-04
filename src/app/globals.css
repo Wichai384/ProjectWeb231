@@ -260,6 +260,53 @@ body {
   line-height: 1.6;
 }
 
+.productDialogActions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.productDialogActions button {
+  min-height: 2.75rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #222;
+  border-radius: 0;
+  background: #fff;
+  color: #171717;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.productDialogActions button:not(:disabled):hover {
+  background: #f0f3f0;
+}
+
+.productDialogActions .addToCartButton {
+  border-color: #193b25;
+  background: #193b25;
+  color: #fff;
+}
+
+.productDialogActions .addToCartButton:not(:disabled):hover {
+  background: #285338;
+}
+
+.productDialogActions .addToCartButton:disabled {
+  border-color: #c5d0c7;
+  background: #e8eee9;
+  color: #536358;
+  cursor: not-allowed;
+}
+
+.productDialogActions button:focus-visible {
+  outline: 2px solid #285338;
+  outline-offset: 2px;
+}
+
 /* Navbar */
 
 .navbar {
@@ -674,21 +721,6 @@ body:has(.loginPage) .siteHeader {
   outline-offset: 3px;
 }
 
-.guestBrowseLink {
-  display: block;
-  margin-top: 1rem;
-  color: #285338;
-  font-size: 0.9rem;
-  text-align: center;
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
-
-.guestBrowseLink:focus-visible {
-  outline: 2px solid #285338;
-  outline-offset: 3px;
-}
-
 .loginError {
   margin: 0 0 1rem;
   color: #a32020;
@@ -710,6 +742,7 @@ body:has(.loginPage) .siteHeader {
     margin-bottom: 2rem;
   }
 }
+
 /* Buy product modal */
 
 .buyModalBackdrop {
@@ -757,7 +790,7 @@ body:has(.loginPage) .siteHeader {
   cursor: pointer;
 }
 
-.buyModal > p {
+.buyModal>p {
   margin: 0 0 1rem;
   color: #555;
   font-size: 0.85rem;
@@ -799,14 +832,14 @@ body:has(.loginPage) .siteHeader {
   outline-offset: 2px;
 }
 
-.buyModal form > div {
+.buyModal form>div {
   display: flex;
   justify-content: flex-end;
   gap: 0.5rem;
   margin-top: 0.5rem;
 }
 
-.buyModal form > div button {
+.buyModal form>div button {
   min-height: 2.5rem;
   padding: 0.5rem 0.9rem;
   border: 1px solid #555;
@@ -817,13 +850,13 @@ body:has(.loginPage) .siteHeader {
   cursor: pointer;
 }
 
-.buyModal form > div button[type="submit"] {
+.buyModal form>div button[type="submit"] {
   border-color: #000;
   background: #000;
   color: #fff;
 }
 
-.buyModal form > div button:hover {
+.buyModal form>div button:hover {
   opacity: 0.85;
 }
 
@@ -936,17 +969,18 @@ body:has(.loginPage) .siteHeader {
 /* Mobile */
 
 @media (max-width: 480px) {
+
   .buyModal,
   .ordersDialog {
     width: 100%;
     padding: 1rem;
   }
 
-  .buyModal form > div {
+  .buyModal form>div {
     flex-direction: column;
   }
 
-  .buyModal form > div button {
+  .buyModal form>div button {
     width: 100%;
   }
 
@@ -954,6 +988,7 @@ body:has(.loginPage) .siteHeader {
     width: 100%;
   }
 }
+
 /* Cart count */
 
 .cartButton {
@@ -975,6 +1010,7 @@ body:has(.loginPage) .siteHeader {
   font-weight: 700;
   line-height: 1;
 }
+
 /* Cart */
 .cartBackdrop {
   position: fixed;
@@ -985,6 +1021,7 @@ body:has(.loginPage) .siteHeader {
   padding: 1rem;
   background: rgb(0 0 0 / 45%);
 }
+
 .cartDialog {
   box-sizing: border-box;
   width: min(100%, 38rem);
@@ -995,6 +1032,7 @@ body:has(.loginPage) .siteHeader {
   background: #fff;
   color: #171717;
 }
+
 .cartHeader {
   display: flex;
   align-items: center;
@@ -1002,10 +1040,12 @@ body:has(.loginPage) .siteHeader {
   gap: 1rem;
   margin-bottom: 1rem;
 }
+
 .cartHeader h2 {
   margin: 0;
   font-size: 1.1rem;
 }
+
 .cartHeader button {
   width: 2rem;
   height: 2rem;
@@ -1016,15 +1056,18 @@ body:has(.loginPage) .siteHeader {
   line-height: 1;
   cursor: pointer;
 }
+
 .cartEmpty {
   margin: 2rem 0;
   text-align: center;
   color: #777;
 }
+
 .cartList {
   display: grid;
   gap: 0.75rem;
 }
+
 .cartItem {
   display: flex;
   justify-content: space-between;
@@ -1032,30 +1075,37 @@ body:has(.loginPage) .siteHeader {
   padding: 1rem 0;
   border-top: 1px solid #ddd;
 }
+
 .cartItem:first-child {
   border-top: 0;
 }
+
 .cartItemInfo {
   min-width: 0;
 }
+
 .cartItemInfo h3 {
   margin: 0 0 0.4rem;
   font-size: 0.95rem;
 }
+
 .cartItemInfo p {
   margin: 0 0 0.25rem;
   color: #666;
   font-size: 0.8rem;
 }
+
 .cartItemPrice {
   color: #e53935 !important;
   font-weight: 700;
 }
+
 .cartItemActions {
   display: flex;
   align-items: center;
   gap: 0.4rem;
 }
+
 .cartItemActions button {
   min-height: 2.2rem;
   padding: 0.45rem 0.75rem;
@@ -1066,17 +1116,20 @@ body:has(.loginPage) .siteHeader {
   font-size: 0.75rem;
   cursor: pointer;
 }
+
 .cartItemActions button:last-child {
   border-color: #000;
   background: #000;
   color: #fff;
 }
+
 .cartSummary {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid #ccc;
 }
-.cartSummary > div {
+
+.cartSummary>div {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1084,10 +1137,12 @@ body:has(.loginPage) .siteHeader {
   margin-bottom: 0.5rem;
   font-size: 0.85rem;
 }
+
 .cartTotal {
   color: #e53935;
   font-size: 1.1rem;
 }
+
 .cartCheckoutButton {
   width: 100%;
   min-height: 2.7rem;
@@ -1101,24 +1156,30 @@ body:has(.loginPage) .siteHeader {
   font-weight: 700;
   cursor: pointer;
 }
+
 .cartCheckoutButton:hover {
   opacity: 0.85;
 }
+
 @media (max-width: 480px) {
   .cartDialog {
     width: 100%;
     padding: 1rem;
   }
+
   .cartItem {
     flex-direction: column;
   }
+
   .cartItemActions {
     width: 100%;
   }
+
   .cartItemActions button {
     flex: 1;
   }
 }
+
 .profileBackdrop {
   position: fixed;
   z-index: 40;
@@ -1295,6 +1356,7 @@ body:has(.loginPage) .siteHeader {
     grid-template-columns: 1fr;
   }
 }
+
 .productSellerPreview {
   display: block;
   margin-top: 0.25rem;
@@ -1454,6 +1516,7 @@ body:has(.loginPage) .siteHeader {
 
   cursor: pointer;
 }
+
 .myProductMessage {
   margin: 0;
 
@@ -1469,6 +1532,7 @@ body:has(.loginPage) .siteHeader {
 
   font-size: 0.9rem;
 }
+
 .favoriteButton {
   width: 100%;
 
@@ -1705,6 +1769,7 @@ body:has(.loginPage) .siteHeader {
 
   font-size: 0.9rem;
 }
+
 .sortSelect {
   min-height: 2.5rem;
   padding: 0 0.75rem;
@@ -1724,6 +1789,7 @@ body:has(.loginPage) .siteHeader {
 
   font-size: 0.9rem;
 }
+
 .myPostsCount {
   margin: 0.25rem 0 0;
   color: #666;
@@ -2023,6 +2089,7 @@ body:has(.loginPage) .siteHeader {
   color: #c62828 !important;
   font-size: 0.75rem !important;
 }
+
 .ordersEmpty {
   padding: 2rem 1rem;
   text-align: center;
@@ -2042,7 +2109,7 @@ body:has(.loginPage) .siteHeader {
   gap: 0.75rem;
 }
 
-.ordersHeader > div p {
+.ordersHeader>div p {
   margin: 0.25rem 0 0;
   color: #666;
   font-size: 0.85rem;
@@ -2061,6 +2128,7 @@ body:has(.loginPage) .siteHeader {
   color: #fff;
   cursor: pointer;
 }
+
 .notificationButton {
   position: relative;
 }
@@ -2200,6 +2268,7 @@ body:has(.loginPage) .siteHeader {
   color: #fff;
   cursor: pointer;
 }
+
 .notificationButton {
   position: relative;
 }
