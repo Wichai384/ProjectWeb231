@@ -5,10 +5,9 @@
   --foreground: #171717;
 }
 
-@theme inline {
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* Global theme and base styles */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -85,7 +84,10 @@ body {
   border: 1px solid #888;
   background: #fff;
   color: #171717;
-  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .productCardTrigger {
@@ -707,4 +709,1633 @@ body:has(.loginPage) .siteHeader {
   .loginDescription {
     margin-bottom: 2rem;
   }
+}
+/* Buy product modal */
+
+.buyModalBackdrop {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(0 0 0 / 45%);
+}
+
+.buyModal {
+  box-sizing: border-box;
+  width: min(100%, 34rem);
+  max-height: min(88svh, 46rem);
+  overflow-y: auto;
+  padding: 1.25rem;
+  border: 1px solid #b8b8b8;
+  background: #fff;
+  color: #171717;
+}
+
+.buyModalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.buyModalHeader h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.buyModalHeader button {
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  color: #171717;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.buyModal > p {
+  margin: 0 0 1rem;
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.buyModal form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.buyModal form label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.buyModal input,
+.buyModal textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.65rem 0.7rem;
+  border: 1px solid #aaa;
+  border-radius: 0;
+  background: #fff;
+  color: #171717;
+  font: inherit;
+  font-size: 0.875rem;
+}
+
+.buyModal textarea {
+  resize: vertical;
+}
+
+.buyModal input:focus-visible,
+.buyModal textarea:focus-visible,
+.buyModalHeader button:focus-visible {
+  outline: 2px solid #285338;
+  outline-offset: 2px;
+}
+
+.buyModal form > div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.buyModal form > div button {
+  min-height: 2.5rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid #555;
+  background: #fff;
+  color: #111;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.buyModal form > div button[type="submit"] {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+
+.buyModal form > div button:hover {
+  opacity: 0.85;
+}
+
+/* Orders modal */
+
+.ordersBackdrop {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(0 0 0 / 45%);
+}
+
+.ordersDialog {
+  box-sizing: border-box;
+  width: min(100%, 38rem);
+  max-height: min(88svh, 46rem);
+  overflow-y: auto;
+  padding: 1.25rem;
+  border: 1px solid #b8b8b8;
+  background: #fff;
+  color: #171717;
+}
+
+.ordersHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ordersHeader h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.ordersHeader button {
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  color: #171717;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.ordersHeader button:focus-visible {
+  outline: 2px solid #285338;
+  outline-offset: 2px;
+}
+
+.orderItem {
+  padding: 0.9rem 0;
+  border-top: 1px solid #ddd;
+}
+
+.orderItem:first-child {
+  border-top: 0;
+}
+
+.orderItem h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.orderItem p {
+  margin: 0 0 0.35rem;
+  color: #555;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.orderItem p strong {
+  color: #171717;
+}
+
+.orderItem button {
+  min-height: 2.4rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.orderItem button:hover {
+  opacity: 0.85;
+}
+
+.orderItem button:focus-visible {
+  outline: 2px solid #285338;
+  outline-offset: 2px;
+}
+
+/* Product status */
+
+.productDialogStatus {
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .buyModal,
+  .ordersDialog {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .buyModal form > div {
+    flex-direction: column;
+  }
+
+  .buyModal form > div button {
+    width: 100%;
+  }
+
+  .orderItem button {
+    width: 100%;
+  }
+}
+/* Cart count */
+
+.cartButton {
+  position: relative;
+}
+
+.cartCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 0.3rem;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  background: #e53935;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+/* Cart */
+.cartBackdrop {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(0 0 0 / 45%);
+}
+.cartDialog {
+  box-sizing: border-box;
+  width: min(100%, 38rem);
+  max-height: min(88svh, 46rem);
+  overflow-y: auto;
+  padding: 1.25rem;
+  border: 1px solid #b8b8b8;
+  background: #fff;
+  color: #171717;
+}
+.cartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.cartHeader h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.cartHeader button {
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  color: #171717;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.cartEmpty {
+  margin: 2rem 0;
+  text-align: center;
+  color: #777;
+}
+.cartList {
+  display: grid;
+  gap: 0.75rem;
+}
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid #ddd;
+}
+.cartItem:first-child {
+  border-top: 0;
+}
+.cartItemInfo {
+  min-width: 0;
+}
+.cartItemInfo h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+}
+.cartItemInfo p {
+  margin: 0 0 0.25rem;
+  color: #666;
+  font-size: 0.8rem;
+}
+.cartItemPrice {
+  color: #e53935 !important;
+  font-weight: 700;
+}
+.cartItemActions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.cartItemActions button {
+  min-height: 2.2rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #777;
+  background: #fff;
+  color: #111;
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.cartItemActions button:last-child {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+.cartSummary {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
+}
+.cartSummary > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+.cartTotal {
+  color: #e53935;
+  font-size: 1.1rem;
+}
+.cartCheckoutButton {
+  width: 100%;
+  min-height: 2.7rem;
+  margin-top: 0.75rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.cartCheckoutButton:hover {
+  opacity: 0.85;
+}
+@media (max-width: 480px) {
+  .cartDialog {
+    width: 100%;
+    padding: 1rem;
+  }
+  .cartItem {
+    flex-direction: column;
+  }
+  .cartItemActions {
+    width: 100%;
+  }
+  .cartItemActions button {
+    flex: 1;
+  }
+}
+.profileBackdrop {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  padding: 1rem;
+
+  background: rgb(0 0 0 / 45%);
+}
+
+.profileDialog {
+  box-sizing: border-box;
+
+  width: min(100%, 32rem);
+
+  padding: 1.25rem;
+
+  border: 1px solid #b8b8b8;
+
+  background: #fff;
+  color: #171717;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  margin-bottom: 1.25rem;
+}
+
+.profileHeader h2 {
+  margin: 0;
+
+  font-size: 1.1rem;
+}
+
+.profileHeader button {
+  width: 2rem;
+  height: 2rem;
+
+  border: 0;
+
+  background: transparent;
+  color: #171717;
+
+  font-size: 1.5rem;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  padding-bottom: 1.25rem;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.profileImage,
+.profileImagePlaceholder {
+  flex-shrink: 0;
+
+  width: 4rem;
+  height: 4rem;
+
+  border-radius: 50%;
+}
+
+.profileImage {
+  object-fit: cover;
+}
+
+.profileImagePlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eee;
+
+  font-size: 1.5rem;
+}
+
+.profileDetails {
+  min-width: 0;
+}
+
+.profileDetails h3 {
+  margin: 0 0 0.3rem;
+
+  font-size: 1rem;
+}
+
+.profileDetails p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 0.8rem;
+
+  overflow-wrap: anywhere;
+}
+
+.profileStats {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 0.75rem;
+
+  margin-top: 1rem;
+}
+
+.profileStat {
+  display: grid;
+
+  gap: 0.25rem;
+
+  padding: 1rem;
+
+  border: 1px solid #ddd;
+
+  text-align: center;
+}
+
+.profileStat strong {
+  font-size: 1.2rem;
+}
+
+.profileStat span {
+  color: #666;
+
+  font-size: 0.75rem;
+}
+
+.profileActions {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 1rem;
+}
+
+.profileActions button {
+  min-height: 2.4rem;
+
+  padding: 0.5rem 1rem;
+
+  border: 1px solid #000;
+
+  background: #000;
+  color: #fff;
+
+  font: inherit;
+  font-size: 0.8rem;
+
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .profileDialog {
+    width: 100%;
+  }
+
+  .profileStats {
+    grid-template-columns: 1fr;
+  }
+}
+.productSellerPreview {
+  display: block;
+  margin-top: 0.25rem;
+
+  color: #666;
+
+  font-size: 0.75rem;
+}
+
+.sellerProfileBackdrop {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  padding: 1rem;
+
+  background: rgb(0 0 0 / 45%);
+}
+
+.sellerProfileDialog {
+  box-sizing: border-box;
+
+  width: min(100%, 32rem);
+  max-height: 90vh;
+
+  padding: 1.25rem;
+
+  overflow-y: auto;
+
+  border: 1px solid #b8b8b8;
+
+  background: #fff;
+  color: #171717;
+}
+
+.sellerProfileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1.25rem;
+}
+
+.sellerProfileHeader h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.sellerProfileHeader button {
+  border: 0;
+
+  background: transparent;
+
+  font-size: 1.5rem;
+
+  cursor: pointer;
+}
+
+.sellerProfileInfo {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  padding-bottom: 1rem;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.sellerProfileImage,
+.sellerProfilePlaceholder {
+  width: 4rem;
+  height: 4rem;
+
+  border-radius: 50%;
+}
+
+.sellerProfileImage {
+  object-fit: cover;
+}
+
+.sellerProfilePlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eee;
+
+  font-size: 1.5rem;
+}
+
+.sellerProfileInfo h3 {
+  margin: 0 0 0.25rem;
+}
+
+.sellerProfileInfo p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 0.8rem;
+}
+
+.sellerProfileProducts {
+  margin-top: 1rem;
+}
+
+.sellerProfileProducts h3 {
+  margin: 0 0 0.75rem;
+}
+
+.sellerProductList {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.sellerProductItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding: 0.75rem;
+
+  border: 1px solid #ddd;
+}
+
+.sellerProductItem p {
+  margin: 0.25rem 0 0;
+
+  color: #555;
+}
+
+.sellerProductItem span {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.sellerProfileActions {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 1rem;
+}
+
+.sellerProfileActions button {
+  padding: 0.5rem 1rem;
+
+  border: 1px solid #000;
+
+  background: #000;
+  color: #fff;
+
+  cursor: pointer;
+}
+.myProductMessage {
+  margin: 0;
+
+  padding: 0.75rem;
+
+  border: 1px solid #ddd;
+
+  background: #f5f5f5;
+
+  color: #666;
+
+  text-align: center;
+
+  font-size: 0.9rem;
+}
+.favoriteButton {
+  width: 100%;
+
+  margin: 0.75rem 0;
+
+  padding: 0.6rem;
+
+  border: 1px solid #ddd;
+
+  background: #fff;
+
+  cursor: pointer;
+
+  font-size: 0.9rem;
+}
+
+.favoriteButton:hover {
+  background: #f7f7f7;
+}
+
+.productFavoritePreview {
+  display: block;
+
+  margin-top: 0.25rem;
+
+  color: #d33;
+
+  font-size: 0.75rem;
+}
+
+.favoriteNavButton {
+  position: relative;
+}
+
+.favoriteCount {
+  position: absolute;
+
+  top: -0.4rem;
+  right: -0.4rem;
+
+  min-width: 1.2rem;
+  height: 1.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  background: #e53935;
+  color: #fff;
+
+  font-size: 0.7rem;
+}
+
+.favoritesBackdrop {
+  position: fixed;
+
+  z-index: 60;
+
+  inset: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 1rem;
+
+  background: rgb(0 0 0 / 45%);
+}
+
+.favoritesDialog {
+  width: min(100%, 36rem);
+
+  max-height: 90vh;
+
+  padding: 1.25rem;
+
+  overflow-y: auto;
+
+  background: #fff;
+
+  color: #171717;
+
+  border: 1px solid #ccc;
+}
+
+.favoritesHeader {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 1rem;
+}
+
+.favoritesHeader h2 {
+  margin: 0;
+
+  font-size: 1.1rem;
+}
+
+.favoritesHeader button {
+  border: 0;
+
+  background: transparent;
+
+  font-size: 1.5rem;
+
+  cursor: pointer;
+}
+
+.favoritesEmpty {
+  padding: 2rem 1rem;
+
+  text-align: center;
+
+  color: #666;
+}
+
+.favoritesEmpty p {
+  margin: 0 0 0.5rem;
+}
+
+.favoritesEmpty span {
+  font-size: 0.85rem;
+}
+
+.favoritesCount {
+  margin: 0 0 0.75rem;
+
+  color: #666;
+
+  font-size: 0.9rem;
+}
+
+.favoritesList {
+  display: grid;
+
+  gap: 0.75rem;
+}
+
+.favoriteItem {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding: 0.9rem;
+
+  border: 1px solid #ddd;
+}
+
+.favoriteItemInfo {
+  min-width: 0;
+}
+
+.favoriteItemInfo h3 {
+  margin: 0 0 0.35rem;
+
+  font-size: 1rem;
+}
+
+.favoriteItemInfo p {
+  margin: 0.2rem 0;
+
+  color: #666;
+
+  font-size: 0.85rem;
+}
+
+.favoriteItemInfo .favoritePrice {
+  color: #111;
+
+  font-weight: 600;
+}
+
+.favoriteRemoveButton {
+  flex-shrink: 0;
+
+  padding: 0.5rem 0.75rem;
+
+  border: 1px solid #ddd;
+
+  background: #fff;
+
+  cursor: pointer;
+}
+
+.favoriteRemoveButton:hover {
+  background: #f5f5f5;
+}
+
+.favoritesActions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 1rem;
+}
+
+.favoritesActions button {
+  padding: 0.5rem 1rem;
+
+  border: 1px solid #000;
+
+  background: #000;
+
+  color: #fff;
+
+  cursor: pointer;
+}
+
+.myProductMessage {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0.75rem;
+
+  border: 1px solid #ddd;
+
+  background: #f5f5f5;
+
+  color: #666;
+
+  text-align: center;
+
+  font-size: 0.9rem;
+}
+.sortSelect {
+  min-height: 2.5rem;
+  padding: 0 0.75rem;
+
+  border: 1px solid #ccc;
+  background: #fff;
+
+  font-size: 0.9rem;
+
+  cursor: pointer;
+}
+
+.productResultCount {
+  margin: 0.75rem 0;
+
+  color: #666;
+
+  font-size: 0.9rem;
+}
+.myPostsCount {
+  margin: 0.25rem 0 0;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.myPostsEmpty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #666;
+}
+
+.myPostsEmpty p {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.myPostsEmpty span {
+  font-size: 0.85rem;
+}
+
+.myPostCategory {
+  margin: 0.25rem 0;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.myPostPrice {
+  display: block;
+  margin: 0.35rem 0;
+  font-size: 1rem;
+}
+
+.myPostDescription {
+  margin: 0.5rem 0;
+  color: #555;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.myPostStatus {
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+}
+
+.myPostStatusSelect {
+  width: 100%;
+  min-height: 2.3rem;
+  margin-top: 0.25rem;
+  padding: 0 0.6rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.myPostActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.myPostActions button {
+  flex: 1;
+  padding: 0.55rem 0.75rem;
+  cursor: pointer;
+}
+
+.myPostEditButton {
+  border: 1px solid #222;
+  background: #fff;
+}
+
+.myPostDeleteButton {
+  border: 1px solid #c62828;
+  background: #fff;
+  color: #c62828;
+}
+
+.myPostDeleteButton:hover {
+  background: #fff5f5;
+}
+
+.myPostsFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.myPostsFooter button {
+  padding: 0.55rem 1rem;
+  border: 1px solid #222;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+.editPostBackdrop {
+  position: fixed;
+  z-index: 70;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(0 0 0 / 50%);
+}
+
+.editPostDialog {
+  box-sizing: border-box;
+  width: min(100%, 32rem);
+  max-height: 90vh;
+  padding: 1.25rem;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.editPostHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.editPostHeader h3 {
+  margin: 0;
+}
+
+.editPostHeader button {
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.editPostField {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.85rem;
+}
+
+.editPostField input,
+.editPostField select,
+.editPostField textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  font: inherit;
+}
+
+.editPostField textarea {
+  resize: vertical;
+}
+
+.editPostActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.editPostActions button {
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+}
+
+.editPostActions button:last-child {
+  border: 1px solid #222;
+  background: #222;
+  color: #fff;
+}
+
+.purchaseHistoryBackdrop {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(0 0 0 / 45%);
+}
+
+.purchaseHistoryDialog {
+  box-sizing: border-box;
+  width: min(100%, 38rem);
+  max-height: 90vh;
+  padding: 1.25rem;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #171717;
+}
+
+.purchaseHistoryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.purchaseHistoryHeader h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.purchaseHistoryHeader p {
+  margin: 0.25rem 0 0;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.purchaseHistoryHeader button {
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.purchaseHistoryEmpty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #666;
+}
+
+.purchaseHistoryEmpty p {
+  margin: 0 0 0.5rem;
+}
+
+.purchaseHistoryEmpty span {
+  font-size: 0.85rem;
+}
+
+.purchaseHistoryList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.purchaseHistoryItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+
+.purchaseHistoryItem h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.purchaseHistoryItem p {
+  margin: 0.25rem 0;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.purchaseHistoryPrice {
+  color: #111 !important;
+  font-size: 1rem !important;
+  font-weight: 600;
+}
+
+.purchaseHistoryStatus {
+  flex-shrink: 0;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #ddd;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.purchaseHistoryStatusReserved {
+  color: #9a6700;
+}
+
+.purchaseHistoryStatusSold {
+  color: #2e7d32;
+}
+
+.purchaseHistoryFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.purchaseHistoryFooter button {
+  padding: 0.55rem 1rem;
+  border: 1px solid #222;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+.cartUnavailable {
+  color: #c62828 !important;
+  font-size: 0.75rem !important;
+}
+.ordersEmpty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #666;
+}
+
+.ordersEmpty p {
+  margin: 0 0 0.5rem;
+}
+
+.ordersEmpty span {
+  font-size: 0.85rem;
+}
+
+.ordersList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ordersHeader > div p {
+  margin: 0.25rem 0 0;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.ordersFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.ordersFooter button {
+  padding: 0.55rem 1rem;
+  border: 1px solid #222;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+.notificationButton {
+  position: relative;
+}
+
+.notificationCount {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  min-width: 1.2rem;
+  height: 1.2rem;
+  padding: 0 0.25rem;
+  border-radius: 999px;
+  background: #d32f2f;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+  text-align: center;
+}
+
+.notificationBackdrop {
+  position: fixed;
+  z-index: 70;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(0 0 0 / 45%);
+}
+
+.notificationDialog {
+  box-sizing: border-box;
+  width: min(100%, 38rem);
+  max-height: 90vh;
+  padding: 1.25rem;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #171717;
+}
+
+.notificationHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.notificationHeader h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.notificationHeader p {
+  margin: 0.25rem 0 0;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.notificationHeader button {
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.notificationEmpty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #666;
+}
+
+.notificationEmpty p {
+  margin: 0 0 0.5rem;
+}
+
+.notificationEmpty span {
+  font-size: 0.85rem;
+}
+
+.notificationList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.notificationItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+
+.notificationUnread {
+  background: #fafafa;
+}
+
+.notificationRead {
+  opacity: 0.65;
+}
+
+.notificationItem h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.notificationItem p {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+}
+
+.notificationItem span {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.notificationItem button {
+  flex-shrink: 0;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #222;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+.notificationFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.notificationFooter button {
+  padding: 0.55rem 1rem;
+  border: 1px solid #222;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+.notificationButton {
+  position: relative;
+}
+
+.notificationCount {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  min-width: 1.2rem;
+  height: 1.2rem;
+  padding: 0 0.25rem;
+  border-radius: 999px;
+  background: #d32f2f;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+  text-align: center;
+}
+
+.notificationBackdrop {
+  position: fixed;
+  z-index: 70;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(0 0 0 / 45%);
+}
+
+.notificationDialog {
+  box-sizing: border-box;
+  width: min(100%, 38rem);
+  max-height: 90vh;
+  padding: 1.25rem;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #171717;
+}
+
+.notificationHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.notificationHeader h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.notificationHeader p {
+  margin: 0.25rem 0 0;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.notificationHeader button {
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.notificationEmpty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #666;
+}
+
+.notificationEmpty p {
+  margin: 0 0 0.5rem;
+}
+
+.notificationEmpty span {
+  font-size: 0.85rem;
+}
+
+.notificationList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.notificationItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+
+.notificationUnread {
+  background: #fafafa;
+}
+
+.notificationRead {
+  opacity: 0.65;
+}
+
+.notificationItem h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.notificationItem p {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+}
+
+.notificationItem span {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.notificationItem button {
+  flex-shrink: 0;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #222;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+.notificationFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.notificationFooter button {
+  padding: 0.55rem 1rem;
+  border: 1px solid #222;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
 }

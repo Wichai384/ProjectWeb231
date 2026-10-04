@@ -1,34 +1,32 @@
+
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+
 import Navbar from "@/components/Navbar";
+import AuthSessionProvider from "@/components/SessionProvider";
 import { ProductCatalogProvider } from "@/context/ProductCatalogContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Maichailaewnaja",
-  description: "ตลาดซื้อขายและแบ่งปันของในมหาวิทยาลัยแม่โจ้",
+  title: "Maichailaewnaj",
+  description: "Marketplace",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="th">
       <body>
-        <ProductCatalogProvider>
-          <header className="siteHeader">
+        <AuthSessionProvider>
+          <ProductCatalogProvider>
             <Navbar />
-          </header>
-          {children}
-        </ProductCatalogProvider>
+
+            {children}
+          </ProductCatalogProvider>
+        </AuthSessionProvider>
       </body>
     </html>
   );
