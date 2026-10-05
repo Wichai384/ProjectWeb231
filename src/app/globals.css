@@ -340,6 +340,10 @@ body {
   gap: 0.5rem;
 }
 
+.navMenuToggle {
+  display: none;
+}
+
 .navButton {
   min-height: 2rem;
   padding: 0.35rem 0.7rem;
@@ -617,6 +621,73 @@ body {
 
   .navButton {
     padding-inline: 0.5rem;
+  }
+}
+
+/* Responsive navigation and product layout */
+@media (max-width: 1100px) {
+  .navList {
+    min-height: 3.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-inline: 1rem;
+  }
+
+  .navTitle {
+    font-size: 1rem;
+  }
+
+  .navMenuToggle {
+    display: inline-flex;
+    min-height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid #555;
+    border-radius: 0;
+    background: #fff;
+    color: #171717;
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+
+  .navMenuToggle:focus-visible {
+    outline: 2px solid #285338;
+    outline-offset: 2px;
+  }
+
+  .navMenuGlyph {
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  .navActions {
+    display: none;
+    flex: 0 0 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+    padding-block: 0.35rem 0.5rem;
+  }
+
+  .navActions.navActionsOpen {
+    display: flex;
+  }
+
+  .navActions .navButton {
+    width: 100%;
+    min-height: 2.65rem;
+    padding-inline: 0.8rem;
+    font-size: 0.85rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 960px) {
+  .productGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -2407,4 +2478,46 @@ body:has(.loginPage) .siteHeader {
   background: #222;
   color: #fff;
   cursor: pointer;
+}
+
+@media (max-width: 380px) {
+  .productGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .productDialogActions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+
+  .productDialog,
+  .sellDialog,
+  .myPostsDialog,
+  .cartDialog,
+  .ordersDialog,
+  .profileDialog,
+  .sellerProfileDialog,
+  .favoritesDialog,
+  .purchaseHistoryDialog,
+  .notificationDialog,
+  .buyModal {
+    max-height: calc(100svh - 1rem);
+    padding: 1rem;
+  }
+
+  .productDialogBackdrop,
+  .sellDialogBackdrop,
+  .myPostsBackdrop,
+  .cartBackdrop,
+  .ordersBackdrop,
+  .profileBackdrop,
+  .sellerProfileBackdrop,
+  .favoritesBackdrop,
+  .purchaseHistoryBackdrop,
+  .notificationBackdrop,
+  .buyModalBackdrop {
+    padding: 0.5rem;
+  }
 }

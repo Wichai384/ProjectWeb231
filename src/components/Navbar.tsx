@@ -20,6 +20,17 @@ import NotificationModal from "./Notifications/NotificationModal";
 
 import { useProductCatalog } from "@/context/ProductCatalogContext";
 
+type ActiveDialog =
+  | "myPosts"
+  | "sell"
+  | "orders"
+  | "cart"
+  | "profile"
+  | "favorites"
+  | "purchaseHistory"
+  | "notifications"
+  | null;
+
 export default function Navbar() {
   const { data: session, status } =
     useSession();
@@ -33,20 +44,16 @@ export default function Navbar() {
     orders,
   } = useProductCatalog();
 
-  const [
-    activeDialog,
-    setActiveDialog,
-  ] = useState<
-    | "myPosts"
-    | "sell"
-    | "orders"
-    | "cart"
-    | "profile"
-    | "favorites"
-    | "purchaseHistory"
-    | "notifications"
-    | null
-  >(null);
+  const [activeDialog, setActiveDialog] =
+    useState<ActiveDialog>(null);
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] =
+    useState(false);
+
+  function openDialog(dialog: Exclude<ActiveDialog, null>) {
+    setActiveDialog(dialog);
+    setIsMobileMenuOpen(false);
+  }
 
   if (status === "loading") {
     return null;
@@ -63,7 +70,7 @@ export default function Navbar() {
     orders.filter(
       (order) =>
         order.buyerEmail ===
-          buyerEmail &&
+        buyerEmail &&
         !order.notificationRead,
     ).length;
 
@@ -78,15 +85,26 @@ export default function Navbar() {
             Maichailaewnaj
           </h1>
 
-          <div className="navActions">
+          <button
+            className="navMenuToggle"
+            type="button"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="primary-navigation"
+            aria-label={isMobileMenuOpen ? "ปิดเมนู" : "เปิดเมนู"}
+            onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+          >
+            <span>เมนู</span>
+            <span className="navMenuGlyph" aria-hidden="true">☰</span>
+          </button>
+
+          <div
+            id="primary-navigation"
+            className={`navActions ${isMobileMenuOpen ? "navActionsOpen" : ""}`}
+          >
             <button
               className="navButton navButtonSecondary"
               type="button"
-              onClick={() =>
-                setActiveDialog(
-                  "myPosts",
-                )
-              }
+              onClick={() => openDialog("myPosts")}
             >
               โพสต์ของฉัน
             </button>
@@ -94,11 +112,7 @@ export default function Navbar() {
             <button
               className="navButton navButtonSecondary"
               type="button"
-              onClick={() =>
-                setActiveDialog(
-                  "orders",
-                )
-              }
+              onClick={() => openDialog("orders")}
             >
               รายการสั่งซื้อ
             </button>
@@ -106,11 +120,7 @@ export default function Navbar() {
             <button
               className="navButton navButtonSecondary"
               type="button"
-              onClick={() =>
-                setActiveDialog(
-                  "purchaseHistory",
-                )
-              }
+              onClick={() => openDialog("purchaseHistory")}
             >
               🧾 ประวัติการซื้อ
             </button>
@@ -118,30 +128,22 @@ export default function Navbar() {
             <button
               className="navButton navButtonSecondary notificationButton"
               type="button"
-              onClick={() =>
-                setActiveDialog(
-                  "notifications",
-                )
-              }
+              onClick={() => openDialog("notifications")}
             >
               🔔 แจ้งเตือน
 
               {unreadNotifications >
                 0 && (
-                <span className="notificationCount">
-                  {unreadNotifications}
-                </span>
-              )}
+                  <span className="notificationCount">
+                    {unreadNotifications}
+                  </span>
+                )}
             </button>
 
             <button
               className="navButton navButtonSecondary cartButton"
               type="button"
-              onClick={() =>
-                setActiveDialog(
-                  "cart",
-                )
-              }
+              onClick={() => openDialog("cart")}
             >
               🛒 ตะกร้า
 
@@ -155,30 +157,22 @@ export default function Navbar() {
             <button
               className="navButton navButtonSecondary favoriteNavButton"
               type="button"
-              onClick={() =>
-                setActiveDialog(
-                  "favorites",
-                )
-              }
+              onClick={() => openDialog("favorites")}
             >
               ❤️ ถูกใจ
 
               {favorites.length >
                 0 && (
-                <span className="favoriteCount">
-                  {favorites.length}
-                </span>
-              )}
+                  <span className="favoriteCount">
+                    {favorites.length}
+                  </span>
+                )}
             </button>
 
             <button
               className="navButton navButtonPrimary"
               type="button"
-              onClick={() =>
-                setActiveDialog(
-                  "sell",
-                )
-              }
+              onClick={() => openDialog("sell")}
             >
               ลงขายสินค้า
             </button>
@@ -186,11 +180,7 @@ export default function Navbar() {
             <button
               className="navButton navButtonSecondary"
               type="button"
-              onClick={() =>
-                setActiveDialog(
-                  "profile",
-                )
-              }
+              onClick={() => openDialog("profile")}
             >
               👤 โปรไฟล์
             </button>
@@ -199,9 +189,7 @@ export default function Navbar() {
               className="navButton navButtonPrimary"
               type="button"
               onClick={() =>
-                void signOut({
-                  callbackUrl: "/",
-                })
+                void signOut({ callbackUrl: "/" })
               }
             >
               ออกจากระบบ
@@ -212,57 +200,57 @@ export default function Navbar() {
 
       {activeDialog ===
         "myPosts" && (
-        <MyPostsModal
-          onClose={() =>
-            setActiveDialog(null)
-          }
-        />
-      )}
+          <MyPostsModal
+            onClose={() =>
+              setActiveDialog(null)
+            }
+          />
+        )}
 
       {activeDialog ===
         "orders" && (
-        <OrdersModal
-          onClose={() =>
-            setActiveDialog(null)
-          }
-        />
-      )}
+          <OrdersModal
+            onClose={() =>
+              setActiveDialog(null)
+            }
+          />
+        )}
 
       {activeDialog ===
         "purchaseHistory" && (
-        <PurchaseHistoryModal
-          onClose={() =>
-            setActiveDialog(null)
-          }
-        />
-      )}
+          <PurchaseHistoryModal
+            onClose={() =>
+              setActiveDialog(null)
+            }
+          />
+        )}
 
       {activeDialog ===
         "notifications" && (
-        <NotificationModal
-          onClose={() =>
-            setActiveDialog(null)
-          }
-        />
-      )}
+          <NotificationModal
+            onClose={() =>
+              setActiveDialog(null)
+            }
+          />
+        )}
 
       {activeDialog ===
         "cart" && (
-        <CartModal
-          onClose={() =>
-            setActiveDialog(null)
-          }
-        />
-      )}
+          <CartModal
+            onClose={() =>
+              setActiveDialog(null)
+            }
+          />
+        )}
 
       {activeDialog ===
         "favorites" && (
-        <FavoritesModal
-          onClose={() =>
-            setActiveDialog(null)
-          }
-        />
-      )}
+          <FavoritesModal
+            onClose={() =>
+              setActiveDialog(null)
+            }
+          />
+        )}
 
       {activeDialog === "sell" && (
         <PostSaleModal
@@ -274,12 +262,12 @@ export default function Navbar() {
 
       {activeDialog ===
         "profile" && (
-        <ProfileModal
-          onClose={() =>
-            setActiveDialog(null)
-          }
-        />
-      )}
+          <ProfileModal
+            onClose={() =>
+              setActiveDialog(null)
+            }
+          />
+        )}
     </>
   );
 }
