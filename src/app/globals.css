@@ -743,10 +743,9 @@ body:has(.loginPage) .siteHeader {
 .login-card {
   width: min(520px, 100%);
 
-  min-height: 640px;
-
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 
   padding: 58px 54px;
 
@@ -757,9 +756,75 @@ body:has(.loginPage) .siteHeader {
   box-sizing: border-box;
 }
 
-/* =========================================
-   BRAND
-   ========================================= */
+.loginBrand {
+  color: #20251f;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.loginEyebrow {
+  margin: 0.5rem 0 3rem;
+  color: #858983;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+}
+
+.loginTitle {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.loginDescription {
+  margin: 0.8rem 0 2rem;
+  color: #686d67;
+  line-height: 1.7;
+}
+
+.loginProviderButton {
+  width: 100%;
+  min-height: 3rem;
+  border: 1px solid #26382e;
+  background: #26382e;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.loginProviderButton:hover {
+  background: #18271f;
+}
+
+.loginProviderButton:focus-visible,
+.loginBackLink:focus-visible,
+.loginBrand:focus-visible {
+  outline: 2px solid #1b67b2;
+  outline-offset: 3px;
+}
+
+.loginError {
+  margin: 0.75rem 0 0;
+  color: #a32121;
+  font-size: 0.875rem;
+}
+
+.loginBackLink {
+  margin-top: 2rem;
+  color: #535a53;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 600px) {
+  .login-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .loginEyebrow {
+    margin-bottom: 2.25rem;
+  }
+}
 
 /* Buy product modal */
 

@@ -8,6 +8,7 @@ import {
 } from "next-auth/react";
 
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 import MyPostsModal from "./MyPosts/MyPostsModal";
 import PostSaleModal from "./PostSale/PostSaleModal";
@@ -69,7 +70,7 @@ export default function Navbar() {
      ไม่แสดง Navbar ที่หน้าแรก
   ----------------------------------------- */
 
-  if (pathname === "/") {
+  if (pathname === "/" || pathname === "/login") {
     return null;
   }
 
@@ -173,6 +174,8 @@ export default function Navbar() {
             }`}
           >
 
+            {session ? (
+              <>
             {/* -----------------------------------------------
                 โพสต์ของฉัน
             ------------------------------------------------ */}
@@ -334,6 +337,16 @@ export default function Navbar() {
             >
               ออกจากระบบ
             </button>
+              </>
+            ) : (
+              <Link
+                className="navButton navButtonPrimary"
+                href="/login"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                เข้าสู่ระบบ
+              </Link>
+            )}
 
           </div>
 
