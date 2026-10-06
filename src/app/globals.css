@@ -8417,6 +8417,11 @@ body {
   background: transparent;
 }
 
+/* Checkout is opened from the cart, so it must sit above the cart layer. */
+.buyModalBackdrop {
+  z-index: 5001;
+}
+
 .cartDialog,
 .ordersDialog,
 .profileDialog,
