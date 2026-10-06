@@ -8,6 +8,8 @@ type BuyProductModalProps = {
   onConfirm: (buyerName: string, shippingAddress: string, phone: string) => void;
 };
 
+const PHONE_REGEX = /^\d{10}$/;
+
 export default function BuyProductModal({
   productName,
   onClose,
@@ -29,10 +31,15 @@ export default function BuyProductModal({
       return;
     }
 
+    if (!PHONE_REGEX.test(phone)) {
+      window.alert("กรุณากรอกเบอร์โทรเป็นตัวเลข 10 หลัก");
+      return;
+    }
+
     onConfirm(
       buyerName.trim(),
       shippingAddress.trim(),
-      phone.trim(),
+      phone,
     );
   }
 
@@ -100,11 +107,17 @@ export default function BuyProductModal({
             เบอร์โทร
             <input
               type="tel"
+              inputMode="numeric"
+              maxLength={10}
               value={phone}
               onChange={(event) =>
-                setPhone(event.target.value)
+                setPhone(
+                  event.target.value
+                    .replace(/\D/g, "")
+                    .slice(0, 10),
+                )
               }
-              placeholder="กรอกเบอร์โทรศัพท์"
+              placeholder="กรอกเบอร์โทร 10 หลัก "
             />
           </label>
 
