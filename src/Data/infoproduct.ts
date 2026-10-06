@@ -30,7 +30,7 @@ export const infoproduct: InfoProduct[] = [
   },
   {
     id: "product-004",
-    image: "/hoodie.jpg",
+    image: "/Hoodie.jpg",
     Price: 120,
     Name: "เสื้อฮู้ด",
     Description: "เสื้อฮู้ดแขนยาว เหมาะสำหรับใส่ไปเรียนหรือในห้องแอร์",
