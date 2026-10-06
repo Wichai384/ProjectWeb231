@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { useProductCatalog } from "@/context/ProductCatalogContext";
@@ -18,36 +18,26 @@ export default function SellerProfileModal({
   sellerImage,
   onClose,
 }: SellerProfileModalProps) {
-  const { products } =
-    useProductCatalog();
+  const { products } = useProductCatalog();
+  const [imageFailed, setImageFailed] = useState(false);
 
-  const sellerProducts =
-    products.filter(
-      (product) =>
-        product.sellerEmail &&
-        product.sellerEmail ===
-          sellerEmail,
-    );
+  const sellerProducts = products.filter(
+    (product) =>
+      product.sellerEmail &&
+      product.sellerEmail === sellerEmail,
+  );
 
   useEffect(() => {
-    function closeOnEscape(
-      event: KeyboardEvent,
-    ) {
+    function closeOnEscape(event: KeyboardEvent) {
       if (event.key === "Escape") {
         onClose();
       }
     }
 
-    window.addEventListener(
-      "keydown",
-      closeOnEscape,
-    );
+    window.addEventListener("keydown", closeOnEscape);
 
     return () => {
-      window.removeEventListener(
-        "keydown",
-        closeOnEscape,
-      );
+      window.removeEventListener("keydown", closeOnEscape);
     };
   }, [onClose]);
 
@@ -55,10 +45,7 @@ export default function SellerProfileModal({
     <div
       className="sellerProfileBackdrop"
       onMouseDown={(event) => {
-        if (
-          event.target ===
-          event.currentTarget
-        ) {
+        if (event.target === event.currentTarget) {
           onClose();
         }
       }}
@@ -70,9 +57,7 @@ export default function SellerProfileModal({
         aria-labelledby="sellerProfileTitle"
       >
         <div className="sellerProfileHeader">
-          <h2 id="sellerProfileTitle">
-            โปรไฟล์ผู้ขาย
-          </h2>
+          <h2 id="sellerProfileTitle">โปรไฟล์ผู้ขาย</h2>
 
           <button
             type="button"
@@ -84,13 +69,16 @@ export default function SellerProfileModal({
         </div>
 
         <div className="sellerProfileInfo">
-          {sellerImage ? (
+          {sellerImage && !imageFailed ? (
             <Image
               className="sellerProfileImage"
               src={sellerImage}
               alt={sellerName}
               width={64}
               height={64}
+              unoptimized
+              referrerPolicy="no-referrer"
+              onError={() => setImageFailed(true)}
             />
           ) : (
             <div className="sellerProfilePlaceholder">
@@ -101,57 +89,40 @@ export default function SellerProfileModal({
           <div>
             <h3>{sellerName}</h3>
 
-            {sellerEmail && (
-              <p>{sellerEmail}</p>
-            )}
+            {sellerEmail && <p>{sellerEmail}</p>}
           </div>
         </div>
 
         <div className="sellerProfileProducts">
-          <h3>
-            สินค้าของผู้ขาย
-          </h3>
+          <h3>สินค้าของผู้ขาย</h3>
 
           {sellerProducts.length === 0 ? (
-            <p>
-              ยังไม่มีสินค้าอื่น
-            </p>
+            <p>ยังไม่มีสินค้าอื่น</p>
           ) : (
             <div className="sellerProductList">
-              {sellerProducts.map(
-                (product) => (
-                  <article
-                    key={product.id}
-                    className="sellerProductItem"
-                  >
-                    <div>
-                      <strong>
-                        {product.Name}
-                      </strong>
+              {sellerProducts.map((product) => (
+                <article
+                  key={product.id}
+                  className="sellerProductItem"
+                >
+                  <div>
+                    <strong>{product.Name}</strong>
 
-                      <p>
-                        ฿
-                        {product.Price.toLocaleString(
-                          "th-TH",
-                        )}
-                      </p>
-                    </div>
+                    <p>
+                      ฿
+                      {product.Price.toLocaleString("th-TH")}
+                    </p>
+                  </div>
 
-                    <span>
-                      {product.status}
-                    </span>
-                  </article>
-                ),
-              )}
+                  <span>{product.status}</span>
+                </article>
+              ))}
             </div>
           )}
         </div>
 
         <div className="sellerProfileActions">
-          <button
-            type="button"
-            onClick={onClose}
-          >
+          <button type="button" onClick={onClose}>
             ปิด
           </button>
         </div>

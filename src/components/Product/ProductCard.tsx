@@ -314,7 +314,7 @@ export default function ProductCard({
 
                                 <strong>
                                     {product.sellerName ??
-                                        "ผู้ขาย"}
+                                        " : นายA"}
                                 </strong>
                             </div>
                         </button>
