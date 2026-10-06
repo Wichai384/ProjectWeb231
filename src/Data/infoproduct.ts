@@ -3,7 +3,7 @@ import type { InfoProduct } from "../types/type_infoProduct";
 export const infoproduct: InfoProduct[] = [
   {
     id: "product-001",
-    image: "/DoDoark.jpg",
+    image: "/หนังสือแคลคูลัส.jpg",
     Price: 150,
     Name: "หนังสือแคลคูลัส 1",
     Description: "รวมเนื้อหาพื้นฐานและตัวอย่างโจทย์สำหรับทบทวนบทเรียน",
@@ -12,6 +12,7 @@ export const infoproduct: InfoProduct[] = [
   },
   {
     id: "product-002",
+    image: "/fan.jpg",
     Price: 200,
     Name: "พัดลมตั้งโต๊ะ",
     Description: "พัดลมตั้งโต๊ะขนาดกะทัดรัด เหมาะสำหรับใช้ในห้องพัก",
@@ -20,6 +21,7 @@ export const infoproduct: InfoProduct[] = [
   },
   {
     id: "product-003",
+    image: "/iPadAir4.jpg",
     Price: 4500,
     Name: "iPad Air รุ่น 4",
     Description: "แท็บเล็ตสำหรับเรียน จดบันทึก วาดภาพ และใช้งานทั่วไป",
@@ -28,6 +30,7 @@ export const infoproduct: InfoProduct[] = [
   },
   {
     id: "product-004",
+    image: "/hoodie.jpg",
     Price: 120,
     Name: "เสื้อฮู้ด",
     Description: "เสื้อฮู้ดแขนยาว เหมาะสำหรับใส่ไปเรียนหรือในห้องแอร์",
@@ -36,6 +39,7 @@ export const infoproduct: InfoProduct[] = [
   },
   {
     id: "product-005",
+    image: "/ไม้แบดมินตัน.jpg",
     Price: 350,
     Name: "ไม้แบดมินตัน",
     Description: "ไม้แบดมินตันสำหรับเล่นออกกำลังกายและฝึกซ้อม",
@@ -44,6 +48,7 @@ export const infoproduct: InfoProduct[] = [
   },
   {
     id: "product-006",
+    image: "/ชีทสรุปสถิติ.png",
     Price: 80,
     Name: "ชีทสรุปสถิติ",
     Description: "สรุปสูตรและหัวข้อสำคัญสำหรับใช้ทบทวนก่อนสอบ",
@@ -52,6 +57,7 @@ export const infoproduct: InfoProduct[] = [
   },
   {
     id: "product-007",
+    image: "/โคมไฟ.jpg",
     Price: 600,
     Name: "โคมไฟอ่านหนังสือ",
     Description: "โคมไฟตั้งโต๊ะสำหรับอ่านหนังสือและทำงาน",
@@ -60,6 +66,7 @@ export const infoproduct: InfoProduct[] = [
   },
   {
     id: "product-008",
+    image: "/หูฟังไร้สาย.jpg",
     Price: 990,
     Name: "หูฟังไร้สาย",
     Description: "หูฟังไร้สายสำหรับฟังเพลง เรียนออนไลน์ และรับสาย",

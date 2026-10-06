@@ -8,6 +8,7 @@ import {
 } from "next-auth/react";
 
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 import MyPostsModal from "./MyPosts/MyPostsModal";
 import PostSaleModal from "./PostSale/PostSaleModal";
@@ -50,102 +51,214 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] =
     useState(false);
 
-  function openDialog(dialog: Exclude<ActiveDialog, null>) {
+  function openDialog(
+    dialog: Exclude<ActiveDialog, null>
+  ) {
     setActiveDialog(dialog);
     setIsMobileMenuOpen(false);
   }
+
+  /* -----------------------------------------
+     Loading
+  ----------------------------------------- */
 
   if (status === "loading") {
     return null;
   }
 
-  if (pathname === "/") {
+  /* -----------------------------------------
+     ไม่แสดง Navbar ที่หน้าแรก
+  ----------------------------------------- */
+
+  if (pathname === "/" || pathname === "/login") {
     return null;
   }
 
+  /* -----------------------------------------
+     User Email
+  ----------------------------------------- */
+
   const buyerEmail =
     session?.user?.email ?? "";
+
+  /* -----------------------------------------
+     จำนวน Notification ที่ยังไม่ได้อ่าน
+  ----------------------------------------- */
 
   const unreadNotifications =
     orders.filter(
       (order) =>
         order.buyerEmail ===
-        buyerEmail &&
-        !order.notificationRead,
+          buyerEmail &&
+        !order.notificationRead
     ).length;
 
   return (
     <>
+      {/* =====================================================
+          NAVBAR
+      ====================================================== */}
+
       <nav
-        className="navbar"
+        className="navbar luxuryNavbar"
         aria-label="เมนูหลัก"
       >
+
         <div className="navList">
-          <h1 className="navTitle">
-            Maichailaewnaj
-          </h1>
+
+          {/* =================================================
+              BRAND
+          ================================================= */}
+
+          <div className="navBrand">
+
+            <h1 className="navTitle">
+              MAICHAILEAWNAJA
+            </h1>
+
+            <span className="navBrandSub">
+              SECONDHAND MARKET
+            </span>
+
+          </div>
+
+
+          {/* =================================================
+              MOBILE MENU
+          ================================================= */}
 
           <button
             className="navMenuToggle"
             type="button"
-            aria-expanded={isMobileMenuOpen}
+            aria-expanded={
+              isMobileMenuOpen
+            }
             aria-controls="primary-navigation"
-            aria-label={isMobileMenuOpen ? "ปิดเมนู" : "เปิดเมนู"}
-            onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+            aria-label={
+              isMobileMenuOpen
+                ? "ปิดเมนู"
+                : "เปิดเมนู"
+            }
+            onClick={() =>
+              setIsMobileMenuOpen(
+                (isOpen) =>
+                  !isOpen
+              )
+            }
           >
-            <span>เมนู</span>
-            <span className="navMenuGlyph" aria-hidden="true">☰</span>
+
+            <span>
+              MENU
+            </span>
+
+            <span
+              className="navMenuGlyph"
+              aria-hidden="true"
+            >
+              ☰
+            </span>
+
           </button>
+
+
+          {/* =================================================
+              NAVIGATION
+          ================================================= */}
 
           <div
             id="primary-navigation"
-            className={`navActions ${isMobileMenuOpen ? "navActionsOpen" : ""}`}
+            className={`navActions ${
+              isMobileMenuOpen
+                ? "navActionsOpen"
+                : ""
+            }`}
           >
+
+            {session ? (
+              <>
+            {/* -----------------------------------------------
+                โพสต์ของฉัน
+            ------------------------------------------------ */}
+
             <button
               className="navButton navButtonSecondary"
               type="button"
-              onClick={() => openDialog("myPosts")}
+              onClick={() =>
+                openDialog("myPosts")
+              }
             >
               โพสต์ของฉัน
             </button>
 
+
+            {/* -----------------------------------------------
+                รายการสั่งซื้อ
+            ------------------------------------------------ */}
+
             <button
               className="navButton navButtonSecondary"
               type="button"
-              onClick={() => openDialog("orders")}
+              onClick={() =>
+                openDialog("orders")
+              }
             >
               รายการสั่งซื้อ
             </button>
 
+
+            {/* -----------------------------------------------
+                ประวัติการซื้อ
+            ------------------------------------------------ */}
+
             <button
               className="navButton navButtonSecondary"
               type="button"
-              onClick={() => openDialog("purchaseHistory")}
+              onClick={() =>
+                openDialog(
+                  "purchaseHistory"
+                )
+              }
             >
-              🧾 ประวัติการซื้อ
+              ประวัติการซื้อ
             </button>
+
+
+            {/* -----------------------------------------------
+                แจ้งเตือน
+            ------------------------------------------------ */}
 
             <button
               className="navButton navButtonSecondary notificationButton"
               type="button"
-              onClick={() => openDialog("notifications")}
+              onClick={() =>
+                openDialog(
+                  "notifications"
+                )
+              }
             >
-              🔔 แจ้งเตือน
+              แจ้งเตือน
 
               {unreadNotifications >
                 0 && (
-                  <span className="notificationCount">
-                    {unreadNotifications}
-                  </span>
-                )}
+                <span className="notificationCount">
+                  {unreadNotifications}
+                </span>
+              )}
             </button>
+
+
+            {/* -----------------------------------------------
+                ตะกร้า
+            ------------------------------------------------ */}
 
             <button
               className="navButton navButtonSecondary cartButton"
               type="button"
-              onClick={() => openDialog("cart")}
+              onClick={() =>
+                openDialog("cart")
+              }
             >
-              🛒 ตะกร้า
+              ตะกร้า
 
               {cart.length > 0 && (
                 <span className="cartCount">
@@ -154,105 +267,175 @@ export default function Navbar() {
               )}
             </button>
 
+
+            {/* -----------------------------------------------
+                ถูกใจ
+            ------------------------------------------------ */}
+
             <button
               className="navButton navButtonSecondary favoriteNavButton"
               type="button"
-              onClick={() => openDialog("favorites")}
+              onClick={() =>
+                openDialog("favorites")
+              }
             >
-              ❤️ ถูกใจ
+              ถูกใจ
 
               {favorites.length >
                 0 && (
-                  <span className="favoriteCount">
-                    {favorites.length}
-                  </span>
-                )}
+                <span className="favoriteCount">
+                  {favorites.length}
+                </span>
+              )}
             </button>
 
-            <button
-              className="navButton navButtonPrimary"
-              type="button"
-              onClick={() => openDialog("sell")}
-            >
-              ลงขายสินค้า
-            </button>
+
+            {/* =================================================
+                ลงขายสินค้า
+                ตอนนี้เป็นปุ่มธรรมดา
+            ================================================= */}
 
             <button
               className="navButton navButtonSecondary"
               type="button"
-              onClick={() => openDialog("profile")}
+              onClick={() =>
+                openDialog("sell")
+              }
             >
-              👤 โปรไฟล์
+              ลงขายสินค้า
             </button>
+
+
+            {/* -----------------------------------------------
+                โปรไฟล์
+            ------------------------------------------------ */}
+
+            <button
+              className="navButton navButtonSecondary"
+              type="button"
+              onClick={() =>
+                openDialog("profile")
+              }
+            >
+              โปรไฟล์
+            </button>
+
+
+            {/* =================================================
+                ออกจากระบบ
+                ปุ่มสีเขียวอยู่ตรงนี้
+            ================================================= */}
 
             <button
               className="navButton navButtonPrimary"
               type="button"
               onClick={() =>
-                void signOut({ callbackUrl: "/" })
+                void signOut({
+                  callbackUrl: "/",
+                })
               }
             >
               ออกจากระบบ
             </button>
+              </>
+            ) : (
+              <Link
+                className="navButton navButtonPrimary"
+                href="/login"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                เข้าสู่ระบบ
+              </Link>
+            )}
+
           </div>
+
         </div>
+
       </nav>
+
+
+      {/* =====================================================
+          MODALS
+      ====================================================== */}
+
+
+      {/* โพสต์ของฉัน */}
 
       {activeDialog ===
         "myPosts" && (
-          <MyPostsModal
-            onClose={() =>
-              setActiveDialog(null)
-            }
-          />
-        )}
+        <MyPostsModal
+          onClose={() =>
+            setActiveDialog(null)
+          }
+        />
+      )}
+
+
+      {/* รายการสั่งซื้อ */}
 
       {activeDialog ===
         "orders" && (
-          <OrdersModal
-            onClose={() =>
-              setActiveDialog(null)
-            }
-          />
-        )}
+        <OrdersModal
+          onClose={() =>
+            setActiveDialog(null)
+          }
+        />
+      )}
+
+
+      {/* ประวัติการซื้อ */}
 
       {activeDialog ===
         "purchaseHistory" && (
-          <PurchaseHistoryModal
-            onClose={() =>
-              setActiveDialog(null)
-            }
-          />
-        )}
+        <PurchaseHistoryModal
+          onClose={() =>
+            setActiveDialog(null)
+          }
+        />
+      )}
+
+
+      {/* แจ้งเตือน */}
 
       {activeDialog ===
         "notifications" && (
-          <NotificationModal
-            onClose={() =>
-              setActiveDialog(null)
-            }
-          />
-        )}
+        <NotificationModal
+          onClose={() =>
+            setActiveDialog(null)
+          }
+        />
+      )}
+
+
+      {/* ตะกร้า */}
 
       {activeDialog ===
         "cart" && (
-          <CartModal
-            onClose={() =>
-              setActiveDialog(null)
-            }
-          />
-        )}
+        <CartModal
+          onClose={() =>
+            setActiveDialog(null)
+          }
+        />
+      )}
+
+
+      {/* ถูกใจ */}
 
       {activeDialog ===
         "favorites" && (
-          <FavoritesModal
-            onClose={() =>
-              setActiveDialog(null)
-            }
-          />
-        )}
+        <FavoritesModal
+          onClose={() =>
+            setActiveDialog(null)
+          }
+        />
+      )}
 
-      {activeDialog === "sell" && (
+
+      {/* ลงขายสินค้า */}
+
+      {activeDialog ===
+        "sell" && (
         <PostSaleModal
           onClose={() =>
             setActiveDialog(null)
@@ -260,14 +443,18 @@ export default function Navbar() {
         />
       )}
 
+
+      {/* โปรไฟล์ */}
+
       {activeDialog ===
         "profile" && (
-          <ProfileModal
-            onClose={() =>
-              setActiveDialog(null)
-            }
-          />
-        )}
+        <ProfileModal
+          onClose={() =>
+            setActiveDialog(null)
+          }
+        />
+      )}
+
     </>
   );
 }
