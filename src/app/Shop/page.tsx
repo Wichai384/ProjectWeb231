@@ -1,12 +1,22 @@
 import type { Metadata } from "next";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+
 import ProductExplorer from "@/components/search/searchExprolrer";
+import { authOptions } from "@/lib/auth/authOptions";
 
 export const metadata: Metadata = {
   title: "MAICHAILEAWNAJA | SHOP",
   description: "ตลาดสินค้า MAICHAILEAWNAJA",
 };
 
-export default function Store() {
+export default async function Store() {
+  const session = await getServerSession(authOptions);
+
+  if (!session) {
+    redirect("/login?callbackUrl=%2FShop");
+  }
+
   return (
     <main className="shopPage">
 

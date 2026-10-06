@@ -23,9 +23,6 @@ export default function LoginPage() {
           เข้าสู่ระบบเพื่อซื้อขายและจัดการบัญชีของคุณ
         </p>
         <GoogleSignInButton />
-        <Link className="loginBackLink" href="/Shop">
-          กลับไปเลือกซื้อสินค้า
-        </Link>
       </section>
     </main>
   );
