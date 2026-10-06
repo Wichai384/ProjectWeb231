@@ -721,98 +721,45 @@ body:has(.loginPage) .siteHeader {
   display: none;
 }
 
-.loginPage {
+/* =========================================
+   LOGIN PAGE
+   MAICHAILEAWNAJA
+   Minimal / Premium / Clean
+   ========================================= */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 24px;
+
+  background: #f3f4f1;
+  color: #20251f;
+}
+
+/* กล่อง Login */
+.login-card {
+  width: min(520px, 100%);
+
+  min-height: 640px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 58px 54px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe2dc;
+
   box-sizing: border-box;
-  display: grid;
-  min-height: 100svh;
-  place-items: center;
-  padding: 0.75rem;
-  background: #f1f3f1;
 }
 
-.loginPanel {
-  box-sizing: border-box;
-  width: min(100%, 32.5rem);
-  min-height: 38.5rem;
-  padding: 3.25rem 3.125rem;
-  border: 1px solid #d2d8d3;
-  background: #fff;
-}
-
-.loginBrand {
-  margin: 0;
-  color: #17251c;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.loginContext {
-  margin: 0.55rem 0 2.5rem;
-  color: #34533e;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.loginPanel h1 {
-  margin: 0;
-  color: #171717;
-  font-size: 1.75rem;
-  font-weight: 100;
-}
-
-.loginDescription {
-  margin: 0.7rem 0 2.6rem;
-  color: #303630;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.loginProviderButton {
-  width: 100%;
-  min-height: 3.5rem;
-  margin-top: 3.5rem;
-  padding: 0.75rem 0.9rem;
-  border: 0;
-  border-radius: 0;
-  background: #193b25;
-  color: #fff;
-  font: inherit;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.loginProviderButton:hover {
-  background: #285338;
-}
-
-.loginProviderButton:focus-visible {
-  outline: 2px solid #285338;
-  outline-offset: 3px;
-}
-
-.loginError {
-  margin: 0 0 1rem;
-  color: #a32020;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-@media (max-width: 480px) {
-  .loginPanel {
-    min-height: auto;
-    padding: 2.25rem 1.5rem;
-  }
-
-  .loginContext {
-    margin-bottom: 2rem;
-  }
-
-  .loginDescription {
-    margin-bottom: 2rem;
-  }
-}
+/* =========================================
+   BRAND
+   ========================================= */
 
 /* Buy product modal */
 
@@ -2519,5 +2466,7288 @@ body:has(.loginPage) .siteHeader {
   .notificationBackdrop,
   .buyModalBackdrop {
     padding: 0.5rem;
+  }
+}
+
+/* =========================================
+   MINIMAL PREMIUM SHOP
+   ========================================= */
+
+:root {
+  --bg: #f7f7f5;
+  --white: #ffffff;
+  --text: #20231f;
+  --muted: #777b76;
+  --border: #e5e6e2;
+  --green: #24382d;
+  --green-hover: #18291f;
+}
+
+
+/* ==============================
+   PAGE
+   ============================== */
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.shopPage {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding-bottom: 60px;
+}
+
+
+/* ==============================
+   NAVBAR
+   ============================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid var(--border);
+
+  box-shadow: none;
+}
+
+.navList {
+  width: min(1180px, calc(100% - 48px));
+
+  min-height: 64px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+.navTitle {
+  color: var(--text);
+
+  font-size: 16px;
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+}
+
+.navButton {
+  height: 36px;
+
+  padding: 0 14px;
+
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #555a55;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition: 0.2s ease;
+}
+
+.navButton:hover {
+  background: #f1f2ef;
+  color: var(--text);
+}
+
+.navButtonPrimary {
+  background: var(--green);
+
+  color: white;
+
+  border-color: var(--green);
+}
+
+.navButtonPrimary:hover {
+  background: var(--green-hover);
+}
+
+
+/* ==============================
+   SHOP TITLE
+   ============================== */
+
+
+
+.shopPage::after {
+  content: "ค้นหาและเลือกซื้อสินค้ามือสองจากผู้ขายในระบบ";
+
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+
+/* ==============================
+   SEARCH
+   ============================== */
+
+.searchControls {
+  display: grid;
+
+  grid-template-columns: 1fr 180px 150px;
+
+  gap: 8px;
+
+  margin-top: 30px;
+  margin-bottom: 20px;
+
+  padding: 0;
+
+  background: transparent;
+
+  border: 0;
+
+  box-shadow: none;
+}
+
+.searchInput,
+.categoryFilter {
+  height: 44px;
+
+  box-sizing: border-box;
+
+  padding: 0 14px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: var(--text);
+
+  font-size: 13px;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.searchInput::placeholder {
+  color: #a0a39f;
+}
+
+.searchInput:focus,
+.categoryFilter:focus {
+  border-color: #aeb5ae;
+
+  box-shadow: 0 0 0 3px rgba(36, 56, 45, 0.05);
+}
+
+
+/* ==============================
+   PRODUCT COUNT
+   ============================== */
+
+.shopPage>p {
+  margin: 0 0 12px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+
+/* ==============================
+   PRODUCT GRID
+   ============================== */
+
+.productGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  padding: 0 0 40px;
+}
+
+
+/* ==============================
+   PRODUCT CARD
+   ============================== */
+
+.productCard {
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  border-radius: 10px;
+
+  background: var(--white);
+
+  box-shadow: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-2px);
+
+  border-color: #d6d9d4;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ==============================
+   PRODUCT IMAGE
+   ============================== */
+
+.productMedia {
+  position: relative;
+
+  aspect-ratio: 1 / 0.9;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #f1f1ef;
+
+  border: 0;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+.productCard:hover .productImage {
+  transform: scale(1.02);
+}
+
+
+/* ==============================
+   PRODUCT INFO
+   ============================== */
+
+.productInfo {
+  padding: 15px 15px 16px;
+
+  min-height: 105px;
+}
+
+.productPrice {
+  margin-bottom: 5px;
+
+  color: var(--text);
+
+  font-size: 16px;
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+}
+
+.productTitle {
+  margin: 0;
+
+  color: #3c413c;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+
+  overflow: hidden;
+}
+
+.productMeta {
+  margin-top: 8px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* ==============================
+   SELLER
+   ============================== */
+
+.productSellerPreview {
+  margin-top: 7px;
+
+  color: #858983;
+
+  font-size: 11px;
+}
+
+
+/* ==============================
+   FAVORITE
+   ============================== */
+
+.favoriteButton {
+  margin-top: 10px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #777c77;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.favoriteButton:hover {
+  color: var(--green);
+}
+
+
+/* ==============================
+   BADGE
+   ============================== */
+
+.reservedBadge {
+  top: 10px;
+  left: 10px;
+
+  padding: 5px 8px;
+
+  border-radius: 5px;
+
+  background: rgba(32, 35, 31, 0.88);
+
+  color: white;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 1000px) {
+  .productGrid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .searchControls {
+    grid-template-columns: 1fr 160px;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .shopPage {
+    width: calc(100% - 28px);
+  }
+
+  .navList {
+    width: calc(100% - 28px);
+  }
+
+  .navActions {
+    overflow-x: auto;
+  }
+
+  .productGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+  .searchControls {
+    grid-template-columns: 1fr;
+  }
+
+  .shopPage::before {
+    font-size: 26px;
+  }
+}
+
+/* =========================================
+   MAICHAILEAWNAJA SHOP
+========================================= */
+
+/* =========================================================
+   SHOP
+   MINIMAL / CLEAN
+   ========================================================= */
+
+/* =========================================================
+   SHOP PAGE
+   ========================================================= */
+
+.shopPage {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #fafaf7;
+  color: #20231f;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.shopHero {
+  width: min(1180px, calc(100% - 56px));
+
+  min-height: 500px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 26px 0 24px;
+}
+
+
+/* =========================================================
+   HERO TOP
+   ========================================================= */
+
+.shopHeroTop {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid #e1e4df;
+}
+
+.shopHeroTop span {
+  color: #7f8981;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 1.8px;
+}
+
+.shopHeroTop span:first-child {
+  color: #55705e;
+
+  letter-spacing: 0.3px;
+}
+
+.shopHeroTop span:last-child {
+  color: #9ba29c;
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.shopHeroContent {
+  position: relative;
+
+  padding: 65px 0 55px;
+}
+
+
+/* soft green shape */
+
+.shopHeroContent::before {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 20%;
+
+  width: 250px;
+  height: 72px;
+
+  border-radius: 50%;
+
+  background: #dce9df;
+
+  opacity: 0.8;
+
+  transform: translateY(-50%) rotate(-4deg);
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   SMALL TEXT
+   ========================================================= */
+
+.shopHeroSmall {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 17px;
+
+  color: #526458;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.shopHeroTitle {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+
+  margin: 0;
+
+  color: #20231f;
+
+  font-size: clamp(48px, 6.2vw, 82px);
+  font-weight: 700;
+
+  letter-spacing: -4px;
+  line-height: 0.95;
+}
+
+.shopHeroTitle span {
+  display: inline-block;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* =========================================================
+   GREEN ACCENT
+   ========================================================= */
+
+.shopHeroTitle .shopHeroAccent {
+  position: relative;
+
+  margin: 0 5px;
+
+  color: #587461;
+
+  font-weight: 600;
+}
+
+.shopHeroTitle .shopHeroAccent::after {
+  content: "";
+
+  position: absolute;
+
+  left: 4px;
+  right: 4px;
+  bottom: -8px;
+
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: #a8c5ae;
+
+  transform: rotate(-2deg);
+}
+
+
+/* subtle hover */
+
+.shopHeroTitle:hover span:first-child {
+  transform: translateY(-2px);
+}
+
+.shopHeroTitle:hover .shopHeroAccent {
+  transform: translateY(-4px);
+}
+
+.shopHeroTitle:hover span:nth-child(3) {
+  transform: translateY(2px);
+}
+
+.shopHeroTitle:hover span:last-child {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.shopHeroDescription {
+  position: relative;
+  z-index: 1;
+
+  margin: 23px 0 0;
+
+  color: #777e77;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   HERO BOTTOM
+   ========================================================= */
+
+.shopHeroBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 16px;
+
+  border-top: 1px solid #e1e4df;
+}
+
+.shopHeroBottom > span:first-child {
+  color: #526458;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 1.8px;
+}
+
+.shopHeroArrow {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #cbd8ce;
+  border-radius: 50%;
+
+  background: #edf4ef;
+
+  color: #4f6d58;
+
+  font-size: 13px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.shopHeroArrow:hover {
+  background: #587461;
+  color: #ffffff;
+
+  transform: translateY(2px);
+}
+
+
+/* =========================================================
+   PRODUCT AREA
+   ========================================================= */
+
+.productArea {
+  width: min(1180px, calc(100% - 56px));
+
+  margin: 0 auto;
+
+  padding: 65px 0 100px;
+}
+
+
+/* =========================================================
+   PRODUCT HEADER
+   ========================================================= */
+
+.productHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  padding-bottom: 18px;
+
+  margin-bottom: 26px;
+
+  border-bottom: 1px solid #e1e4df;
+}
+
+.productHeader > div {
+  display: flex;
+  align-items: baseline;
+
+  gap: 13px;
+}
+
+.productNumber {
+  color: #8da394;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+.productHeader h2 {
+  margin: 0;
+
+  color: #20231f;
+
+  font-size: 27px;
+  font-weight: 600;
+
+  letter-spacing: -0.5px;
+}
+
+.productHeaderLabel {
+  color: #9ba39d;
+
+  font-size: 7px;
+  font-weight: 600;
+
+  letter-spacing: 1.8px;
+}
+
+
+/* =========================================================
+   PRODUCT EXPLORER
+   ========================================================= */
+
+.productArea .productExplorer {
+  width: 100%;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .shopHero,
+  .productArea {
+    width: calc(100% - 40px);
+  }
+
+  .shopHero {
+    min-height: 450px;
+  }
+
+  .shopHeroContent {
+    padding: 55px 0 45px;
+  }
+
+  .shopHeroTitle {
+    font-size: clamp(40px, 7vw, 65px);
+
+    letter-spacing: -3px;
+  }
+
+  .shopHeroContent::before {
+    left: 18%;
+
+    width: 200px;
+    height: 60px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .shopHero,
+  .productArea {
+    width: calc(100% - 28px);
+  }
+
+  .shopHero {
+    min-height: 400px;
+
+    padding-top: 20px;
+  }
+
+  .shopHeroTop {
+    padding-bottom: 12px;
+  }
+
+  .shopHeroTop span {
+    font-size: 6px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .shopHeroTop span:first-child {
+    font-size: 9px;
+
+    letter-spacing: 0;
+  }
+
+  .shopHeroContent {
+    padding: 45px 0 38px;
+  }
+
+  .shopHeroContent::before {
+    left: 12%;
+
+    width: 150px;
+    height: 50px;
+  }
+
+  .shopHeroSmall {
+    margin-bottom: 13px;
+
+    font-size: 10px;
+  }
+
+  .shopHeroTitle {
+    font-size: clamp(32px, 9.5vw, 50px);
+
+    letter-spacing: -2px;
+  }
+
+  .shopHeroTitle .shopHeroAccent {
+    margin: 0 3px;
+  }
+
+  .shopHeroTitle .shopHeroAccent::after {
+    bottom: -5px;
+
+    height: 2px;
+  }
+
+  .shopHeroDescription {
+    margin-top: 18px;
+
+    font-size: 12px;
+  }
+
+  .shopHeroBottom {
+    padding-top: 12px;
+  }
+
+  .shopHeroBottom > span:first-child {
+    font-size: 6px;
+
+    letter-spacing: 1.3px;
+  }
+
+  .shopHeroArrow {
+    width: 28px;
+    height: 28px;
+
+    font-size: 11px;
+  }
+
+  .productArea {
+    padding: 48px 0 70px;
+  }
+
+  .productHeader {
+    padding-bottom: 14px;
+
+    margin-bottom: 20px;
+  }
+
+  .productHeader > div {
+    gap: 9px;
+  }
+
+  .productNumber {
+    font-size: 6px;
+  }
+
+  .productHeader h2 {
+    font-size: 21px;
+  }
+
+  .productHeaderLabel {
+    font-size: 6px;
+  }
+}
+
+/* =========================================
+   MAICHAILEAWNAJA
+   LUXURY NAVBAR
+========================================= */
+
+.navbar.luxuryNavbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  background: rgba(246, 246, 243, 0.94);
+
+  border-bottom: 1px solid #dedfdc;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =========================================
+   NAV CONTAINER
+========================================= */
+
+.navbar.luxuryNavbar .navList {
+  width: 100%;
+  max-width: 1500px;
+
+  min-height: 82px;
+
+  margin: 0 auto;
+  padding: 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 35px;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.navBrand {
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+.navbar.luxuryNavbar .navTitle {
+  margin: 0;
+
+  color: #20231f;
+
+  font-size: 19px;
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+}
+
+
+.navBrandSub {
+  margin-top: 7px;
+
+  color: #858983;
+
+  font-size: 8px;
+
+  line-height: 1;
+
+  font-weight: 600;
+
+  letter-spacing: 0.25em;
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.navbar.luxuryNavbar .navActions {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-left: auto;
+}
+
+
+/* =========================================
+   ALL BUTTONS
+========================================= */
+
+.navbar.luxuryNavbar .navButton {
+  position: relative;
+
+  min-height: 38px;
+
+  padding: 7px 12px;
+
+  border: none;
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #686d67;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+/* เส้นใต้ */
+
+.navbar.luxuryNavbar .navButton::after {
+  content: "";
+
+  position: absolute;
+
+  left: 12px;
+  right: 12px;
+  bottom: 3px;
+
+  height: 1px;
+
+  background: #26382e;
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.navbar.luxuryNavbar .navButton:hover {
+  color: #20231f;
+}
+
+
+.navbar.luxuryNavbar .navButton:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================================
+   SELL BUTTON
+========================================= */
+
+.navbar.luxuryNavbar .navButtonPrimary {
+  margin-left: 8px;
+
+  padding: 9px 17px;
+
+  border-radius: 999px;
+
+  background: #26382e;
+
+  color: #ffffff;
+
+  font-weight: 500;
+}
+
+
+.navbar.luxuryNavbar .navButtonPrimary::after {
+  display: none;
+}
+
+
+.navbar.luxuryNavbar .navButtonPrimary:hover {
+  background: #18271f;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.navbar.luxuryNavbar .navButtonLogout {
+  margin-left: 5px;
+
+  color: #777b76;
+}
+
+
+.navbar.luxuryNavbar .navButtonLogout:hover {
+  color: #9a3f3f;
+}
+
+
+/* =========================================
+   NUMBER BADGES
+========================================= */
+
+.navbar.luxuryNavbar .notificationCount,
+.navbar.luxuryNavbar .cartCount,
+.navbar.luxuryNavbar .favoriteCount {
+  position: absolute;
+
+  top: 1px;
+  right: 3px;
+
+  min-width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 4px;
+
+  border-radius: 999px;
+
+  background: #26382e;
+
+  color: #ffffff;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.navbar.luxuryNavbar .navMenuToggle {
+  display: none;
+
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #20231f;
+
+  font-family: inherit;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+}
+
+
+.navMenuGlyph {
+  font-size: 18px;
+  line-height: 1;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1150px) {
+
+  .navbar.luxuryNavbar .navList {
+    padding: 0 24px;
+
+    gap: 20px;
+  }
+
+  .navbar.luxuryNavbar .navActions {
+    gap: 0;
+  }
+
+  .navbar.luxuryNavbar .navButton {
+    padding-left: 8px;
+    padding-right: 8px;
+
+    font-size: 11px;
+  }
+
+  .navbar.luxuryNavbar .navButton::after {
+    left: 8px;
+    right: 8px;
+  }
+
+  .navbar.luxuryNavbar .navTitle {
+    font-size: 16px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+
+  .navbar.luxuryNavbar .navList {
+    min-height: 72px;
+
+    padding: 0 20px;
+  }
+
+
+  .navbar.luxuryNavbar .navMenuToggle {
+    display: flex;
+  }
+
+
+  .navbar.luxuryNavbar .navActions {
+    position: absolute;
+
+    top: 72px;
+    left: 0;
+    right: 0;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 12px 20px 20px;
+
+    background: rgba(246, 246, 243, 0.98);
+
+    border-bottom: 1px solid #dedfdc;
+
+    box-shadow:
+      0 15px 35px rgba(32, 35, 31, 0.08);
+  }
+
+
+  .navbar.luxuryNavbar .navActions.navActionsOpen {
+    display: flex;
+  }
+
+
+  .navbar.luxuryNavbar .navButton {
+    width: 100%;
+
+    min-height: 45px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e4e5e1;
+
+    padding: 12px 4px;
+  }
+
+
+  .navbar.luxuryNavbar .navButton::after {
+    display: none;
+  }
+
+
+  .navbar.luxuryNavbar .navButtonPrimary {
+    margin: 8px 0 0;
+
+    text-align: center;
+
+    border-bottom: none;
+  }
+
+
+  .navbar.luxuryNavbar .navButtonLogout {
+    border-bottom: none;
+  }
+
+
+  .navBrandSub {
+    display: none;
+  }
+
+
+  .navbar.luxuryNavbar .navTitle {
+    font-size: 14px;
+
+    letter-spacing: 0.1em;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .navbar.luxuryNavbar .navList {
+    padding: 0 16px;
+  }
+
+  .navbar.luxuryNavbar .navTitle {
+    font-size: 12px;
+  }
+
+}
+
+/* =========================================================
+   MY POSTS — PREMIUM MODAL
+   MAICHAILEAWNAJA
+========================================================= */
+
+/* =========================================================
+   SEARCH TOOL
+========================================================= */
+
+/* =========================================
+   MY POSTS POPUP
+   ให้ขนาดและน้ำหนักใกล้เคียงกับ Popup อื่น
+   ========================================= */
+
+.premiumPostsBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: transparent;
+}
+
+.premiumPostsDialog {
+  width: min(680px, 100%);
+  max-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fafaf7;
+  color: #20231f;
+  border: 1px solid #dedfd9;
+  box-shadow: 0 18px 50px rgba(25, 30, 26, 0.20);
+}
+
+/* ปุ่มปิด */
+
+.premiumPostsTop {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 18px 24px 0;
+}
+
+.premiumPostsClose {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #d5d8d2;
+  border-radius: 50%;
+  background: transparent;
+  color: #555c55;
+  font-family: inherit;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.premiumPostsClose:hover {
+  background: #26382e;
+  border-color: #26382e;
+  color: #ffffff;
+}
+
+/* Header */
+
+.premiumPostsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 8px 28px 22px;
+}
+
+.premiumPostsTitle {
+  margin: 0;
+  color: #20231f;
+  font-size: 25px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.premiumPostsCountBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.premiumPostsCountBox span {
+  color: #7a8079;
+  font-size: 12px;
+}
+
+.premiumPostsCountBox strong {
+  color: #26382e;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.premiumPostsDivider {
+  height: 1px;
+  margin: 0 28px;
+  background: #dedfd9;
+}
+
+/* Search */
+
+.premiumPostsTools {
+  padding: 20px 28px 4px;
+}
+
+.premiumPostsSearchWrap {
+  position: relative;
+}
+
+.premiumSearchIcon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #7c827b;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.premiumPostsSearch {
+  width: 100%;
+  height: 46px;
+  box-sizing: border-box;
+  padding: 0 15px 0 40px;
+  border: 1px solid #d3d6cf;
+  border-radius: 4px;
+  outline: none;
+  background: #ffffff;
+  color: #20231f;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.premiumPostsSearch:focus {
+  border-color: #26382e;
+  box-shadow: 0 0 0 2px rgba(38, 56, 46, 0.07);
+}
+
+/* Content */
+
+.premiumPostsContent {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 20px 28px;
+}
+
+/* รายการสินค้า */
+
+.premiumPostsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.premiumPostCard {
+  display: flex;
+  gap: 16px;
+  padding: 15px;
+  border: 1px solid #dedfd9;
+  background: #ffffff;
+}
+
+.premiumPostImage {
+  position: relative;
+  width: 105px;
+  height: 105px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #f1f2ee;
+}
+
+.premiumPostImage img {
+  object-fit: cover;
+}
+
+.premiumPostImagePlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #969c95;
+  font-size: 12px;
+}
+
+.premiumPostInfo {
+  min-width: 0;
+  flex: 1;
+}
+
+.premiumPostTopInfo {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.premiumPostCategory {
+  margin: 0 0 4px;
+  color: #858b84;
+  font-size: 11px;
+}
+
+.premiumPostTopInfo h3 {
+  margin: 0;
+  color: #252925;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.premiumPostPrice {
+  flex-shrink: 0;
+  color: #26382e;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.premiumPostDescription {
+  margin: 8px 0 12px;
+  color: #70766f;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.premiumPostMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.premiumStatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #7a8079;
+  font-size: 12px;
+}
+
+.premiumStatus strong {
+  color: #3f453f;
+  font-weight: 600;
+}
+
+.premiumStatusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #9ca19b;
+}
+
+.premiumStatus-selling {
+  background: #607568;
+}
+
+.premiumStatus-reserved {
+  background: #b59a58;
+}
+
+.premiumStatus-sold {
+  background: #9b6c67;
+}
+
+.premiumPostStatusSelect {
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid #d5d8d2;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #555c55;
+  font-family: inherit;
+  font-size: 12px;
+  outline: none;
+}
+
+.premiumPostActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.premiumPostActions button {
+  min-height: 32px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.premiumEditButton {
+  border: 1px solid #d0d3cc;
+  background: #ffffff;
+  color: #4f554f;
+}
+
+.premiumEditButton:hover {
+  border-color: #26382e;
+  color: #26382e;
+}
+
+.premiumDeleteButton {
+  border: 1px solid #e0d2cf;
+  background: #ffffff;
+  color: #95655e;
+}
+
+.premiumDeleteButton:hover {
+  border-color: #b77b72;
+  color: #8d5048;
+}
+
+/* Empty */
+
+.premiumPostsEmpty {
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.premiumEmptyMark {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  border: 1px solid #d5d8d2;
+  border-radius: 50%;
+  color: #687067;
+  font-size: 22px;
+}
+
+.premiumPostsEmpty h3 {
+  margin: 0 0 7px;
+  color: #303530;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.premiumPostsEmpty p {
+  margin: 0;
+  color: #858b84;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.premiumClearSearch {
+  margin-top: 16px;
+  padding: 8px 15px;
+  border: 1px solid #d0d3cc;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #4f554f;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Footer */
+
+.premiumPostsFooter {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  border-top: 1px solid #dedfd9;
+  background: #f3f4f0;
+}
+
+.premiumPostsFooter strong {
+  color: #7a8079;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+}
+
+.premiumPostsFooter button {
+  padding: 8px 16px;
+  border: 1px solid #d0d3cc;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #4f554f;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.premiumPostsFooter button:hover {
+  border-color: #26382e;
+  color: #26382e;
+}
+
+/* Scrollbar */
+
+.premiumPostsContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.premiumPostsContent::-webkit-scrollbar-track {
+  background: #f1f2ee;
+}
+
+.premiumPostsContent::-webkit-scrollbar-thumb {
+  background: #c8ccc5;
+  border-radius: 10px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .premiumPostsBackdrop {
+    padding: 15px;
+  }
+
+  .premiumPostsDialog {
+    width: 100%;
+    max-height: calc(100vh - 30px);
+  }
+
+  .premiumPostsTop {
+    padding: 15px 18px 0;
+  }
+
+  .premiumPostsHeader {
+    padding: 7px 20px 18px;
+  }
+
+  .premiumPostsTitle {
+    font-size: 22px;
+  }
+
+  .premiumPostsDivider {
+    margin: 0 20px;
+  }
+
+  .premiumPostsTools {
+    padding: 16px 20px 3px;
+  }
+
+  .premiumPostsContent {
+    padding: 16px 20px;
+  }
+
+  .premiumPostCard {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .premiumPostImage {
+    width: 85px;
+    height: 85px;
+  }
+
+  .premiumPostsFooter {
+    padding: 14px 20px;
+  }
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes postsBackdropIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes postsDialogIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(22px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .premiumPostsBackdrop {
+    padding: 10px;
+  }
+
+
+  .premiumPostsDialog {
+    max-height: 94vh;
+  }
+
+
+  .premiumPostsTop {
+    padding: 0 18px;
+  }
+
+
+  .premiumPostsHeader {
+    padding: 25px 20px 22px;
+
+    align-items: flex-start;
+  }
+
+
+  .premiumPostsTitle {
+    font-size: 34px;
+  }
+
+
+  .premiumPostsCountBox {
+    min-width: 70px;
+  }
+
+
+  .premiumPostsDivider {
+    margin: 0 20px;
+  }
+
+
+  .premiumPostsTools {
+    padding:
+      18px 20px 0;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .premiumPostsSearchWrap {
+    width: 100%;
+  }
+
+
+  .premiumPostsContent {
+    padding:
+      20px;
+  }
+
+
+  .premiumPostCard {
+    grid-template-columns:
+      85px 1fr;
+
+    gap: 14px;
+  }
+
+
+  .premiumPostNumber {
+    display: none;
+  }
+
+
+  .premiumPostImage {
+    width: 85px;
+    height: 85px;
+  }
+
+
+  .premiumPostTopInfo {
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+
+  .premiumPostPrice {
+    font-size: 14px;
+  }
+
+
+  .premiumPostMeta {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .premiumPostsFooter {
+    padding: 0 20px;
+  }
+
+
+  .premiumPostsFooterBrand span {
+    display: none;
+  }
+
+
+  .premiumEditBody {
+    grid-template-columns: 1fr;
+
+    padding: 20px;
+  }
+
+
+  .premiumEditField:last-child {
+    grid-column: auto;
+  }
+
+
+  .premiumEditActions {
+    padding: 15px 20px;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .premiumPostsHeader {
+    flex-direction: column;
+  }
+
+
+  .premiumPostsCountBox {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border-left: none;
+
+    border-top: 1px solid #dfe1dc;
+
+    padding:
+      12px 0 0;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 8px;
+  }
+
+
+  .premiumPostsCountBox strong {
+    font-size: 22px;
+  }
+
+
+  .premiumPostCard {
+    grid-template-columns: 1fr;
+  }
+
+
+  .premiumPostImage {
+    width: 100%;
+    height: 180px;
+  }
+
+
+  .premiumPostActions {
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================================================
+   MY POSTS — ULTRA CLEAN
+========================================================= */
+
+.premiumPostsBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(20, 25, 22, 0.42);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.premiumPostsDialog {
+  width: min(860px, 100%);
+  max-height: 86vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #fafaf7;
+
+  border: 1px solid #dedfd9;
+
+  color: #20231f;
+
+  box-shadow:
+    0 30px 80px rgba(20, 25, 21, 0.16);
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.premiumPostsTop {
+  min-height: 58px;
+
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e5e6e1;
+}
+
+
+/* ซ่อนทุก label ด้านบน */
+
+.premiumPostsIdentity {
+  display: none;
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.premiumPostsClose {
+  margin-left: auto;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+
+.premiumPostsClose span {
+  display: none;
+}
+
+
+.premiumPostsClose strong {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d9dbd5;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #555b54;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  transition: 0.2s ease;
+}
+
+
+.premiumPostsClose:hover strong {
+  background: #26382e;
+
+  border-color: #26382e;
+
+  color: white;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.premiumPostsHeader {
+  padding: 34px 34px 26px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+/* ซ่อน label */
+
+.premiumPostsOverline {
+  display: none;
+}
+
+
+.premiumPostsTitle {
+  margin: 0;
+
+  color: #20231f;
+
+  font-size: 42px;
+
+  line-height: 1;
+
+  font-weight: 600;
+
+  letter-spacing: -0.04em;
+}
+
+
+.premiumPostsDescription {
+  margin: 12px 0 0;
+
+  color: #7c817a;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   COUNT
+========================================================= */
+
+.premiumPostsCountBox {
+  min-width: 60px;
+
+  padding-left: 20px;
+
+  border-left: 1px solid #dedfd9;
+}
+
+
+.premiumPostsCountBox span,
+.premiumPostsCountBox small {
+  display: none;
+}
+
+
+.premiumPostsCountBox strong {
+  color: #26382e;
+
+  font-size: 30px;
+
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.premiumPostsDivider {
+  height: 1px;
+
+  margin: 0 34px;
+
+  background: #e2e3de;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.premiumPostsTools {
+  padding: 20px 34px 0;
+
+  display: block;
+}
+
+
+.premiumPostsSearchWrap {
+  width: 100%;
+
+  max-width: none;
+}
+
+
+.premiumSearchIcon {
+  left: 15px;
+
+  color: #687068;
+
+  font-size: 11px;
+}
+
+
+.premiumPostsSearch {
+  width: 100%;
+
+  height: 44px;
+
+  box-sizing: border-box;
+
+  padding: 0 15px 0 34px;
+
+  border: 1px solid #dedfd9;
+
+  border-radius: 0;
+
+  outline: none;
+
+  background: #f4f5f1;
+
+  color: #30352f;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  transition: 0.2s ease;
+}
+
+
+.premiumPostsSearch::placeholder {
+  color: #9a9e98;
+}
+
+
+.premiumPostsSearch:focus {
+  background: white;
+
+  border-color: #26382e;
+
+  box-shadow: none;
+}
+
+
+/* ซ่อนจำนวนผลลัพธ์ */
+
+.premiumPostsResult {
+  display: none;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.premiumPostsContent {
+  flex: 1;
+
+  min-height: 250px;
+
+  overflow-y: auto;
+
+  padding: 20px 34px 28px;
+}
+
+
+.premiumPostsContent::-webkit-scrollbar {
+  width: 4px;
+}
+
+
+.premiumPostsContent::-webkit-scrollbar-thumb {
+  background: #d1d4ce;
+}
+
+
+/* =========================================================
+   PRODUCT LIST
+========================================================= */
+
+.premiumPostsList {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.premiumPostCard {
+  display: grid;
+
+  grid-template-columns:
+    120px 1fr;
+
+  gap: 20px;
+
+  padding: 14px;
+
+  background: white;
+
+  border: 1px solid #e2e3de;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.premiumPostCard:hover {
+  border-color: #cbd0c8;
+
+  box-shadow:
+    0 8px 25px rgba(32, 35, 31, 0.05);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.premiumPostNumber {
+  display: none;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.premiumPostImage {
+  position: relative;
+
+  width: 120px;
+  height: 120px;
+
+  overflow: hidden;
+
+  background: #f0f1ed;
+}
+
+
+.premiumPostImage img {
+  object-fit: cover;
+}
+
+
+.premiumPostImageLabel {
+  display: none;
+}
+
+
+/* ไม่มีรูป */
+
+.premiumPostImagePlaceholder {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px dashed #d3d6cf;
+
+  color: #a1a59f;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.premiumPostInfo {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.premiumPostTopInfo {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+/* Category */
+
+.premiumPostCategory {
+  margin: 0 0 6px;
+
+  color: #858a83;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  letter-spacing: 0;
+}
+
+
+/* Product name */
+
+.premiumPostInfo h3 {
+  margin: 0;
+
+  color: #292e29;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* Price */
+
+.premiumPostPrice {
+  color: #26382e;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* Description */
+
+.premiumPostDescription {
+  margin: 10px 0 14px;
+
+  color: #858a83;
+
+  font-size: 11px;
+
+  line-height: 1.65;
+
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.premiumPostMeta {
+  margin-top: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+
+.premiumStatus {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #777d75;
+
+  font-size: 10px;
+}
+
+
+.premiumStatus strong {
+  color: #444a43;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+
+.premiumStatusDot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #26382e;
+}
+
+
+.premiumStatus-selling {
+  background: #26382e;
+}
+
+
+.premiumStatus-reserved {
+  background: #9b814f;
+}
+
+
+.premiumStatus-sold {
+  background: #9b5d5d;
+}
+
+
+/* Select */
+
+.premiumPostStatusSelect {
+  height: 30px;
+
+  padding: 0 10px;
+
+  border: 1px solid #dedfd9;
+
+  background: #fafaf7;
+
+  color: #555b54;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  outline: none;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.premiumPostActions {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 12px;
+
+  padding-top: 11px;
+
+  border-top: 1px solid #ededeb;
+}
+
+
+.premiumEditButton,
+.premiumDeleteButton {
+  height: 30px;
+
+  padding: 0 13px;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.premiumEditButton {
+  border: 1px solid #26382e;
+
+  background: #26382e;
+
+  color: white;
+}
+
+
+.premiumEditButton:hover {
+  background: #1b2a21;
+}
+
+
+.premiumDeleteButton {
+  border: 1px solid transparent;
+
+  background: transparent;
+
+  color: #858a83;
+}
+
+
+.premiumDeleteButton:hover {
+  color: #a04f4f;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.premiumPostsFooter {
+  min-height: 54px;
+
+  padding: 0 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-top: 1px solid #e4e5e0;
+
+  background: #f5f6f2;
+}
+
+
+.premiumPostsFooterBrand strong {
+  color: #555b54;
+
+  font-size: 8px;
+
+  letter-spacing: 0.12em;
+}
+
+
+.premiumPostsFooterBrand span {
+  display: none;
+}
+
+
+.premiumPostsFooter button {
+  border: none;
+
+  background: transparent;
+
+  color: #6f756e;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+
+.premiumPostsFooter button:hover {
+  color: #26382e;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.premiumPostsEmpty {
+  min-height: 280px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.premiumEmptyMark {
+  width: 52px;
+  height: 52px;
+
+  margin-bottom: 18px;
+
+  border: 1px solid #d4d7d0;
+
+  border-radius: 50%;
+
+  color: #26382e;
+
+  font-size: 20px;
+}
+
+
+.premiumEmptyLabel {
+  display: none;
+}
+
+
+.premiumPostsEmpty h3 {
+  margin: 0;
+
+  color: #30352f;
+
+  font-size: 19px;
+
+  font-weight: 600;
+}
+
+
+.premiumPostsEmpty p {
+  max-width: 360px;
+
+  margin: 10px 0 0;
+
+  color: #888d86;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CLEAR SEARCH
+========================================================= */
+
+.premiumClearSearch {
+  margin-top: 16px;
+
+  height: 34px;
+
+  padding: 0 16px;
+
+  border: 1px solid #26382e;
+
+  background: #26382e;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   EDIT MODAL
+========================================================= */
+
+.premiumEditDialog {
+  width: min(550px, 100%);
+
+  background: #fafaf7;
+
+  border: 1px solid #dedfd9;
+
+  box-shadow:
+    0 25px 70px rgba(20, 25, 21, 0.18);
+}
+
+
+.premiumEditTop {
+  padding: 22px 25px;
+
+  border-bottom: 1px solid #e3e4df;
+}
+
+
+.premiumEditTop span {
+  display: none;
+}
+
+
+.premiumEditTop h3 {
+  margin: 0;
+
+  font-size: 24px;
+
+  font-weight: 600;
+}
+
+
+.premiumEditTop button {
+  border-color: #d9dbd5;
+
+  background: transparent;
+}
+
+
+.premiumEditBody {
+  padding: 25px;
+}
+
+
+.premiumEditField span {
+  color: #686e67;
+
+  font-size: 10px;
+
+  letter-spacing: 0;
+}
+
+
+.premiumEditField input,
+.premiumEditField select,
+.premiumEditField textarea {
+  border-color: #dedfd9;
+
+  background: #f5f6f2;
+
+  font-size: 11px;
+}
+
+
+.premiumEditField input:focus,
+.premiumEditField select:focus,
+.premiumEditField textarea:focus {
+  border-color: #26382e;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .premiumPostsBackdrop {
+    padding: 8px;
+  }
+
+
+  .premiumPostsDialog {
+    max-height: 94vh;
+  }
+
+
+  .premiumPostsTop {
+    min-height: 54px;
+
+    padding: 0 18px;
+  }
+
+
+  .premiumPostsHeader {
+    padding: 28px 20px 22px;
+
+    display: block;
+  }
+
+
+  .premiumPostsTitle {
+    font-size: 34px;
+  }
+
+
+  .premiumPostsDescription {
+    font-size: 11px;
+  }
+
+
+  .premiumPostsCountBox {
+    min-width: auto;
+
+    margin-top: 22px;
+
+    padding: 14px 0 0;
+
+    border-left: none;
+
+    border-top: 1px solid #e4e5df;
+  }
+
+
+  .premiumPostsCountBox strong {
+    font-size: 25px;
+  }
+
+
+  .premiumPostsDivider {
+    margin: 0 20px;
+  }
+
+
+  .premiumPostsTools {
+    padding: 18px 20px 0;
+  }
+
+
+  .premiumPostsContent {
+    padding: 18px 20px 24px;
+  }
+
+
+  .premiumPostCard {
+    grid-template-columns: 90px 1fr;
+
+    gap: 14px;
+
+    padding: 12px;
+  }
+
+
+  .premiumPostImage {
+    width: 90px;
+    height: 90px;
+  }
+
+
+  .premiumPostInfo h3 {
+    font-size: 15px;
+  }
+
+
+  .premiumPostPrice {
+    font-size: 15px;
+  }
+
+
+  .premiumPostDescription {
+    font-size: 10px;
+  }
+
+
+  .premiumPostsFooter {
+    padding: 0 20px;
+  }
+}
+
+
+@media (max-width: 430px) {
+
+  .premiumPostCard {
+    grid-template-columns: 1fr;
+  }
+
+
+  .premiumPostImage {
+    width: 100%;
+    height: 180px;
+  }
+
+
+  .premiumPostTopInfo {
+    gap: 8px;
+  }
+
+
+  .premiumPostMeta {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   MY POSTS POPUP
+   CLEAN PREMIUM STYLE
+========================================================= */
+
+.premiumPostsBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(20, 25, 22, 0.45);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   MAIN POPUP
+========================================================= */
+
+.premiumPostsDialog {
+  width: min(860px, 100%);
+  max-height: 86vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #fafaf7;
+  color: #20231f;
+
+  border: 1px solid #dedfd9;
+
+  box-shadow:
+    0 25px 70px rgba(20, 25, 21, 0.18);
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.premiumPostsTop {
+  height: 58px;
+
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  border-bottom: 1px solid #e5e6e1;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.premiumPostsClose {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.premiumPostsClose strong {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d5d8d1;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #555b54;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.premiumPostsClose:hover strong {
+  background: #26382e;
+
+  border-color: #26382e;
+
+  color: white;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.premiumPostsHeader {
+  padding: 32px 34px 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+/* ชื่อหน้า */
+
+.premiumPostsTitle {
+  margin: 0;
+
+  color: #20231f;
+
+  font-size: 40px;
+  line-height: 1.1;
+
+  font-weight: 600;
+
+  letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   จำนวนโพสต์
+========================================================= */
+
+.premiumPostsCountBox {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 7px;
+
+  white-space: nowrap;
+}
+
+
+/* คำว่า จำนวนโพสต์ */
+
+.premiumPostsCountLabel {
+  color: #777d75;
+
+  font-size: 11px;
+
+  font-weight: 400;
+}
+
+
+/* ตัวเลข */
+
+.premiumPostsCountBox strong {
+  color: #26382e;
+
+  font-size: 22px;
+
+  line-height: 1;
+
+  font-weight: 600;
+}
+
+
+/* คำว่า รายการ */
+
+.premiumPostsCountUnit {
+  color: #777d75;
+
+  font-size: 10px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.premiumPostsDivider {
+  height: 1px;
+
+  margin: 0 34px;
+
+  background: #e2e3de;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.premiumPostsTools {
+  padding: 20px 34px 0;
+}
+
+.premiumPostsSearchWrap {
+  position: relative;
+
+  width: 100%;
+}
+
+.premiumSearchIcon {
+  position: absolute;
+
+  left: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #858a83;
+
+  font-size: 15px;
+
+  pointer-events: none;
+}
+
+.premiumPostsSearch {
+  width: 100%;
+  height: 44px;
+
+  box-sizing: border-box;
+
+  padding: 0 14px 0 35px;
+
+  border: 1px solid #dedfd9;
+
+  outline: none;
+
+  background: #f4f5f1;
+
+  color: #30352f;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.premiumPostsSearch::placeholder {
+  color: #9a9e98;
+}
+
+.premiumPostsSearch:hover {
+  background: #ffffff;
+}
+
+.premiumPostsSearch:focus {
+  background: #ffffff;
+
+  border-color: #26382e;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.premiumPostsContent {
+  flex: 1;
+
+  min-height: 250px;
+
+  overflow-y: auto;
+
+  padding: 20px 34px 28px;
+}
+
+
+/* scrollbar */
+
+.premiumPostsContent::-webkit-scrollbar {
+  width: 4px;
+}
+
+.premiumPostsContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.premiumPostsContent::-webkit-scrollbar-thumb {
+  background: #d1d4ce;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   PRODUCT LIST
+========================================================= */
+
+.premiumPostsList {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.premiumPostCard {
+  display: grid;
+
+  grid-template-columns:
+    120px minmax(0, 1fr);
+
+  gap: 20px;
+
+  padding: 14px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e3de;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.premiumPostCard:hover {
+  border-color: #cbd0c8;
+
+  box-shadow:
+    0 8px 25px rgba(32, 35, 31, 0.05);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.premiumPostImage {
+  position: relative;
+
+  width: 120px;
+  height: 120px;
+
+  overflow: hidden;
+
+  background: #f0f1ed;
+}
+
+.premiumPostImage img {
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+.premiumPostCard:hover .premiumPostImage img {
+  transform: scale(1.03);
+}
+
+
+/* ไม่มีรูป */
+
+.premiumPostImagePlaceholder {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px dashed #d3d6cf;
+
+  color: #a1a59f;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.premiumPostInfo {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* ชื่อ + ราคา */
+
+.premiumPostTopInfo {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.premiumPostCategory {
+  margin: 0 0 6px;
+
+  color: #858a83;
+
+  font-size: 10px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   PRODUCT NAME
+========================================================= */
+
+.premiumPostInfo h3 {
+  margin: 0;
+
+  color: #292e29;
+
+  font-size: 19px;
+
+  line-height: 1.2;
+
+  font-weight: 600;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.premiumPostPrice {
+  color: #26382e;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.premiumPostDescription {
+  margin: 10px 0 14px;
+
+  color: #858a83;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   STATUS AREA
+========================================================= */
+
+.premiumPostMeta {
+  margin-top: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+
+/* สถานะ */
+
+.premiumStatus {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #777d75;
+
+  font-size: 10px;
+}
+
+.premiumStatus strong {
+  color: #444a43;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+
+/* จุดสถานะ */
+
+.premiumStatusDot {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background: #26382e;
+}
+
+
+/* Selling */
+
+.premiumStatus-selling {
+  background: #26382e;
+}
+
+
+/* Reserved */
+
+.premiumStatus-reserved {
+  background: #9b814f;
+}
+
+
+/* Sold */
+
+.premiumStatus-sold {
+  background: #9b5d5d;
+}
+
+
+/* =========================================================
+   STATUS SELECT
+========================================================= */
+
+.premiumPostStatusSelect {
+  height: 30px;
+
+  padding: 0 10px;
+
+  border: 1px solid #dedfd9;
+
+  border-radius: 0;
+
+  outline: none;
+
+  background: #fafaf7;
+
+  color: #555b54;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.premiumPostStatusSelect:hover {
+  background: #ffffff;
+
+  border-color: #c7cbc4;
+}
+
+.premiumPostStatusSelect:focus {
+  border-color: #26382e;
+}
+
+
+/* =========================================================
+   BUTTON AREA
+========================================================= */
+
+.premiumPostActions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 12px;
+
+  padding-top: 11px;
+
+  border-top: 1px solid #ededeb;
+}
+
+
+/* ปุ่มทั้งสอง */
+
+.premiumEditButton,
+.premiumDeleteButton {
+  height: 30px;
+
+  padding: 0 14px;
+
+  border-radius: 0;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.premiumEditButton {
+  border: 1px solid #26382e;
+
+  background: #26382e;
+
+  color: #ffffff;
+}
+
+.premiumEditButton:hover {
+  background: #1b2a21;
+
+  border-color: #1b2a21;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.premiumDeleteButton {
+  border: none;
+
+  background: transparent;
+
+  color: #858a83;
+}
+
+.premiumDeleteButton:hover {
+  color: #a04f4f;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.premiumPostsEmpty {
+  min-height: 280px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* วงกลม */
+
+.premiumEmptyMark {
+  width: 50px;
+  height: 50px;
+
+  margin-bottom: 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d4d7d0;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #26382e;
+
+  font-size: 20px;
+}
+
+
+/* หัวข้อ */
+
+.premiumPostsEmpty h3 {
+  margin: 0;
+
+  color: #30352f;
+
+  font-size: 19px;
+
+  font-weight: 600;
+}
+
+
+/* รายละเอียด */
+
+.premiumPostsEmpty p {
+  margin: 10px 0 0;
+
+  color: #888d86;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CLEAR SEARCH
+========================================================= */
+
+.premiumClearSearch {
+  margin-top: 16px;
+
+  height: 34px;
+
+  padding: 0 16px;
+
+  border: 1px solid #26382e;
+
+  background: #26382e;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.premiumClearSearch:hover {
+  background: #1b2a21;
+
+  border-color: #1b2a21;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.premiumPostsFooter {
+  min-height: 54px;
+
+  padding: 0 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-top: 1px solid #e4e5e0;
+
+  background: #f5f6f2;
+}
+
+
+/* ชื่อเว็บ */
+
+.premiumPostsFooter strong {
+  color: #555b54;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* ปิด */
+
+.premiumPostsFooter button {
+  border: none;
+
+  background: transparent;
+
+  color: #6f756e;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.premiumPostsFooter button:hover {
+  color: #26382e;
+}
+
+
+/* =========================================================
+   EDIT POPUP
+========================================================= */
+.premiumEditBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: transparent;
+}
+
+
+.premiumEditDialog {
+  width: min(620px, 100%);
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #fafaf7;
+  color: #20231f;
+
+  border: 1px solid #dedfd9;
+
+  box-shadow: 0 20px 55px rgba(25, 30, 26, 0.18);
+}
+
+
+/* =========================================================
+   EDIT HEADER
+========================================================= */
+
+.premiumEditTop {
+  padding: 22px 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e3e4df;
+}
+
+.premiumEditTop h3 {
+  margin: 0;
+
+  color: #292e29;
+
+  font-size: 24px;
+
+  font-weight: 600;
+}
+
+.premiumEditTop button {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d9dbd5;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #555b54;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.premiumEditTop button:hover {
+  background: #26382e;
+
+  border-color: #26382e;
+
+  color: white;
+}
+
+
+/* =========================================================
+   EDIT BODY
+========================================================= */
+
+.premiumEditBody {
+  padding: 25px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 18px;
+}
+
+
+/* field */
+
+.premiumEditField {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+/* description ใช้เต็มแถว */
+
+.premiumEditField:last-child {
+  grid-column: 1 / -1;
+}
+
+
+/* label */
+
+.premiumEditField span {
+  color: #686e67;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+
+/* inputs */
+
+.premiumEditField input,
+.premiumEditField select,
+.premiumEditField textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dedfd9;
+
+  outline: none;
+
+  background: #f5f6f2;
+
+  color: #30352f;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* input + select */
+
+.premiumEditField input,
+.premiumEditField select {
+  height: 42px;
+
+  padding: 0 12px;
+}
+
+
+/* textarea */
+
+.premiumEditField textarea {
+  min-height: 120px;
+
+  padding: 12px;
+
+  resize: vertical;
+}
+
+
+/* focus */
+
+.premiumEditField input:focus,
+.premiumEditField select:focus,
+.premiumEditField textarea:focus {
+  border-color: #26382e;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   EDIT ACTIONS
+========================================================= */
+
+.premiumEditActions {
+  padding: 18px 25px;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  border-top: 1px solid #e3e4df;
+
+  background: #f5f6f2;
+}
+
+
+/* buttons */
+
+.premiumEditActions button {
+  min-height: 40px;
+
+  padding: 0 17px;
+
+  border: 1px solid #d5d8d1;
+
+  background: transparent;
+
+  color: #626860;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* save */
+
+.premiumEditActions button:last-child {
+  border-color: #26382e;
+
+  background: #26382e;
+
+  color: #ffffff;
+}
+
+.premiumEditActions button:last-child:hover {
+  background: #1b2a21;
+
+  border-color: #1b2a21;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .premiumPostsBackdrop {
+    padding: 8px;
+  }
+
+
+  .premiumPostsDialog {
+    max-height: 94vh;
+  }
+
+
+  .premiumPostsTop {
+    height: 54px;
+
+    padding: 0 18px;
+  }
+
+
+  .premiumPostsHeader {
+    padding: 28px 20px 22px;
+
+    gap: 15px;
+  }
+
+
+  .premiumPostsTitle {
+    font-size: 34px;
+  }
+
+
+  .premiumPostsCountBox {
+    gap: 5px;
+  }
+
+
+  .premiumPostsCountLabel {
+    font-size: 9px;
+  }
+
+
+  .premiumPostsCountBox strong {
+    font-size: 19px;
+  }
+
+
+  .premiumPostsCountUnit {
+    font-size: 9px;
+  }
+
+
+  .premiumPostsDivider {
+    margin: 0 20px;
+  }
+
+
+  .premiumPostsTools {
+    padding: 18px 20px 0;
+  }
+
+
+  .premiumPostsContent {
+    padding: 18px 20px 24px;
+  }
+
+
+  .premiumPostCard {
+    grid-template-columns:
+      90px minmax(0, 1fr);
+
+    gap: 14px;
+  }
+
+
+  .premiumPostImage {
+    width: 90px;
+    height: 90px;
+  }
+
+
+  .premiumPostInfo h3 {
+    font-size: 15px;
+  }
+
+
+  .premiumPostPrice {
+    font-size: 15px;
+  }
+
+
+  .premiumPostsFooter {
+    padding: 0 20px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .premiumPostsHeader {
+    padding:
+      26px 18px 20px;
+
+    align-items: flex-start;
+  }
+
+
+  .premiumPostsTitle {
+    font-size: 30px;
+  }
+
+
+  .premiumPostsCountBox {
+    gap: 4px;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+  }
+
+
+  .premiumPostsCountLabel {
+    font-size: 8px;
+  }
+
+
+  .premiumPostsCountBox strong {
+    font-size: 17px;
+  }
+
+
+  .premiumPostsCountUnit {
+    font-size: 8px;
+  }
+
+
+  .premiumPostCard {
+    grid-template-columns: 1fr;
+  }
+
+
+  .premiumPostImage {
+    width: 100%;
+    height: 180px;
+  }
+
+
+  .premiumPostTopInfo {
+    gap: 8px;
+  }
+
+
+  .premiumPostMeta {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .premiumPostActions {
+    flex-wrap: wrap;
+  }
+
+
+  .premiumEditBody {
+    grid-template-columns: 1fr;
+
+    padding: 20px;
+  }
+
+
+  .premiumEditField:last-child {
+    grid-column: auto;
+  }
+
+
+  .premiumEditActions {
+    padding: 15px 20px;
+  }
+
+}
+
+/* =========================================================
+   MY POSTS MODAL
+   ========================================================= */
+
+.premiumPostsBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(31, 35, 32, 0.48);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  animation: premiumPostsFadeIn 0.2s ease;
+}
+
+
+/* =========================================================
+   MAIN DIALOG
+   ========================================================= */
+
+.premiumPostsDialog {
+  position: relative;
+
+  width: min(920px, 100%);
+  max-height: 88vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #f8f8f5;
+  color: #20231f;
+
+  border: 1px solid #dedfd9;
+
+  box-shadow:
+    0 25px 70px rgba(25, 30, 26, 0.22);
+
+  animation: premiumPostsDialogIn 0.25s ease;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.premiumPostsTop {
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 0 22px;
+
+  border-bottom: 1px solid #e2e3de;
+
+  flex-shrink: 0;
+}
+
+
+.premiumPostsClose {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #d8dad4;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #505650;
+
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.premiumPostsClose:hover {
+  background: #26382e;
+  border-color: #26382e;
+  color: #ffffff;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.premiumPostsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 28px 32px 24px;
+
+  flex-shrink: 0;
+}
+
+
+.premiumPostsTitle {
+  margin: 0;
+
+  color: #20231f;
+
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  letter-spacing: -0.03em;
+}
+
+
+.premiumPostsCountBox {
+  display: flex;
+  align-items: baseline;
+
+  gap: 8px;
+
+  padding-left: 24px;
+
+  border-left: 1px solid #d9dbd5;
+
+  white-space: nowrap;
+}
+
+
+.premiumPostsCountBox span {
+  color: #777c76;
+
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+
+.premiumPostsCountBox strong {
+  color: #26382e;
+
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.premiumPostsDivider {
+  height: 1px;
+
+  margin: 0 32px;
+
+  background: #dedfd9;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.premiumPostsTools {
+  padding: 18px 32px 12px;
+
+  flex-shrink: 0;
+}
+
+
+.premiumPostsSearchWrap {
+  position: relative;
+
+  width: 100%;
+}
+
+
+.premiumSearchIcon {
+  position: absolute;
+
+  left: 16px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #747a73;
+
+  font-size: 19px;
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+
+.premiumPostsSearch {
+  width: 100%;
+  height: 48px;
+
+  box-sizing: border-box;
+
+  padding: 0 16px 0 44px;
+
+  border: 1px solid #d9dbd5;
+  border-radius: 0;
+
+  outline: none;
+
+  background: #f1f2ee;
+  color: #20231f;
+
+  font-family: inherit;
+  font-size: 16px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.premiumPostsSearch::placeholder {
+  color: #8b908a;
+}
+
+
+.premiumPostsSearch:focus {
+  border-color: #26382e;
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.premiumPostsContent {
+  min-height: 0;
+
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 12px 32px 24px;
+}
+
+
+.premiumPostsContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+.premiumPostsContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.premiumPostsContent::-webkit-scrollbar-thumb {
+  background: #c9ccc5;
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   POSTS LIST
+   ========================================================= */
+
+.premiumPostsList {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   POST CARD
+   ========================================================= */
+
+.premiumPostCard {
+  display: grid;
+
+  grid-template-columns: 170px minmax(0, 1fr);
+
+  gap: 22px;
+
+  padding: 12px;
+
+  background: #ffffff;
+
+  border: 1px solid #dedfd9;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.premiumPostCard:hover {
+  border-color: #c8ccc4;
+
+  box-shadow:
+    0 10px 28px rgba(31, 35, 32, 0.08);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+   ========================================================= */
+
+.premiumPostImage {
+  position: relative;
+
+  width: 170px;
+  height: 170px;
+
+  overflow: hidden;
+
+  background: #f0f1ed;
+
+  border: 1px solid #e2e3de;
+}
+
+
+.premiumPostImage img {
+  object-fit: cover;
+}
+
+
+.premiumPostImagePlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #a0a49e;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   PRODUCT INFO
+   ========================================================= */
+
+.premiumPostInfo {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.premiumPostTopInfo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.premiumPostCategory {
+  margin: 0 0 5px;
+
+  color: #777c76;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+
+.premiumPostInfo h3 {
+  margin: 0;
+
+  color: #20231f;
+
+  font-size: 22px;
+  line-height: 1.35;
+  font-weight: 700;
+
+  letter-spacing: -0.015em;
+}
+
+
+.premiumPostPrice {
+  flex-shrink: 0;
+
+  color: #26382e;
+
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.premiumPostDescription {
+  margin: 12px 0 16px;
+
+  color: #656b64;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   META / STATUS
+   ========================================================= */
+
+.premiumPostMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  margin-top: auto;
+}
+
+
+.premiumStatus {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #737871;
+
+  font-size: 14px;
+}
+
+
+.premiumStatus strong {
+  color: #3e443e;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.premiumStatusDot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #26382e;
+}
+
+
+.premiumStatus-selling {
+  background: #26382e;
+}
+
+
+.premiumStatus-reserved {
+  background: #9a7b32;
+}
+
+
+.premiumStatus-sold {
+  background: #8b4c4c;
+}
+
+
+.premiumPostStatusSelect {
+  min-height: 38px;
+
+  padding: 0 30px 0 11px;
+
+  border: 1px solid #d6d8d2;
+  border-radius: 0;
+
+  background: #f7f8f4;
+  color: #3f453f;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  outline: none;
+}
+
+
+.premiumPostStatusSelect:focus {
+  border-color: #26382e;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.premiumPostActions {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 16px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #ecece8;
+}
+
+
+.premiumPostActions button {
+  min-height: 38px;
+
+  padding: 7px 17px;
+
+  border-radius: 0;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.premiumEditButton {
+  border: 1px solid #26382e;
+
+  background: #26382e;
+  color: #ffffff;
+}
+
+
+.premiumEditButton:hover {
+  background: #18271f;
+  border-color: #18271f;
+}
+
+
+.premiumDeleteButton {
+  border: 1px solid transparent;
+
+  background: transparent;
+  color: #8a5a5a;
+}
+
+
+.premiumDeleteButton:hover {
+  border-color: #d9c9c9;
+  background: #f7efef;
+  color: #7b3f3f;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.premiumPostsEmpty {
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 40px 20px;
+}
+
+
+.premiumEmptyMark {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border: 1px solid #d6d9d2;
+  border-radius: 50%;
+
+  color: #26382e;
+
+  font-size: 25px;
+}
+
+
+.premiumPostsEmpty h3 {
+  margin: 0 0 8px;
+
+  color: #20231f;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+
+.premiumPostsEmpty p {
+  max-width: 380px;
+
+  margin: 0;
+
+  color: #777c76;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+.premiumClearSearch {
+  margin-top: 18px;
+
+  padding: 10px 18px;
+
+  border: 1px solid #26382e;
+
+  background: #26382e;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.premiumClearSearch:hover {
+  background: #18271f;
+  border-color: #18271f;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.premiumPostsFooter {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 0 32px;
+
+  border-top: 1px solid #dedfd9;
+
+  background: #f3f4f0;
+
+  flex-shrink: 0;
+}
+
+
+.premiumPostsFooter strong {
+  color: #596058;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+
+.premiumPostsFooter button {
+  padding: 6px 0;
+
+  border: none;
+
+  background: transparent;
+  color: #6e746d;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+
+.premiumPostsFooter button:hover {
+  color: #20231f;
+}
+
+
+/* =========================================================
+   EDIT MODAL BACKDROP
+   ========================================================= */
+
+/* =========================
+   EDIT POST POPUP
+   ========================= */
+
+.premiumEditBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: transparent;
+}
+
+/* กล่องแก้ไข */
+.premiumEditDialog {
+  width: min(760px, 100%);
+  max-height: calc(100vh - 60px);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #fafaf7;
+  color: #20231f;
+
+  border: 1px solid #dedfd9;
+  box-shadow: 0 18px 50px rgba(25, 30, 26, 0.20);
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.premiumEditTop {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 28px 34px;
+
+  border-bottom: 1px solid #dedfd9;
+}
+
+.premiumEditTop h3 {
+  margin: 0;
+
+  color: #20231f;
+
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.premiumEditTop button {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #d5d7d1;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #4f554f;
+
+  font-family: inherit;
+  font-size: 25px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.premiumEditTop button:hover {
+  background: #26382e;
+  border-color: #26382e;
+  color: #ffffff;
+}
+
+/* =========================
+   FORM
+   ========================= */
+
+.premiumEditBody {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+
+  padding: 32px 34px;
+
+  overflow-y: auto;
+}
+
+.premiumEditField {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.premiumEditField span {
+  color: #343a34;
+
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.premiumEditField input,
+.premiumEditField select,
+.premiumEditField textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid #d3d6cf;
+  border-radius: 5px;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #20231f;
+
+  font-family: inherit;
+  font-size: 16px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.premiumEditField input,
+.premiumEditField select {
+  height: 54px;
+  padding: 0 15px;
+}
+
+.premiumEditField textarea {
+  min-height: 170px;
+
+  padding: 14px 15px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+.premiumEditField input:focus,
+.premiumEditField select:focus,
+.premiumEditField textarea:focus {
+  border-color: #26382e;
+
+  box-shadow: 0 0 0 2px rgba(38, 56, 46, 0.08);
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.premiumEditActions {
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  padding: 22px 34px;
+
+  border-top: 1px solid #dedfd9;
+
+  background: #f3f4f0;
+}
+
+.premiumEditActions button {
+  min-width: 130px;
+  min-height: 46px;
+
+  padding: 9px 22px;
+
+  border: 1px solid #d0d3cc;
+  border-radius: 4px;
+
+  background: #ffffff;
+  color: #3f453f;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.premiumEditActions button:first-child:hover {
+  border-color: #26382e;
+  color: #26382e;
+}
+
+.premiumEditActions button:last-child {
+  border-color: #26382e;
+
+  background: #26382e;
+  color: #ffffff;
+}
+
+.premiumEditActions button:last-child:hover {
+  border-color: #18271f;
+  background: #18271f;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+  .premiumEditBackdrop {
+    padding: 15px;
+  }
+
+  .premiumEditDialog {
+    width: 100%;
+    max-height: calc(100vh - 30px);
+  }
+
+  .premiumEditTop {
+    padding: 22px 20px;
+  }
+
+  .premiumEditTop h3 {
+    font-size: 24px;
+  }
+
+  .premiumEditBody {
+    gap: 18px;
+    padding: 24px 20px;
+  }
+
+  .premiumEditField span {
+    font-size: 15px;
+  }
+
+  .premiumEditField input,
+  .premiumEditField select {
+    height: 52px;
+  }
+
+  .premiumEditField textarea {
+    min-height: 150px;
+  }
+
+  .premiumEditActions {
+    padding: 16px 20px;
+  }
+
+  .premiumEditActions button {
+    min-width: 0;
+    flex: 1;
+  }
+}
+
+
+/* =========================================================
+   EDIT MODAL
+   ========================================================= */
+
+.premiumEditDialog {
+  width: min(560px, 100%);
+
+  max-height: 85vh;
+
+  overflow-y: auto;
+
+  background: #f9f9f6;
+
+  border: 1px solid #dfe0db;
+
+  box-shadow:
+    0 25px 60px rgba(25, 30, 26, 0.2);
+}
+
+
+.premiumEditTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 22px 26px;
+
+  border-bottom: 1px solid #dedfd9;
+}
+
+
+.premiumEditTop h3 {
+  margin: 0;
+
+  color: #20231f;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+.premiumEditTop button {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #d8dad4;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #555b55;
+
+  font-family: inherit;
+  font-size: 21px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.premiumEditTop button:hover {
+  background: #26382e;
+  color: #ffffff;
+  border-color: #26382e;
+}
+
+
+/* =========================================================
+   EDIT BODY
+   ========================================================= */
+
+.premiumEditBody {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+
+  padding: 26px;
+}
+
+
+.premiumEditField {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.premiumEditField span {
+  color: #4e554e;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.premiumEditField input,
+.premiumEditField select,
+.premiumEditField textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 13px;
+
+  border: 1px solid #d7d9d3;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #20231f;
+
+  font-family: inherit;
+  font-size: 15px;
+
+  transition: border-color 0.2s ease;
+}
+
+
+.premiumEditField input,
+.premiumEditField select {
+  height: 46px;
+}
+
+
+.premiumEditField textarea {
+  min-height: 120px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+
+.premiumEditField input:focus,
+.premiumEditField select:focus,
+.premiumEditField textarea:focus {
+  border-color: #26382e;
+}
+
+
+/* =========================================================
+   EDIT ACTIONS
+   ========================================================= */
+
+.premiumEditActions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding: 18px 26px;
+
+  border-top: 1px solid #dedfd9;
+
+  background: #f3f4f0;
+}
+
+
+.premiumEditActions button {
+  min-height: 42px;
+
+  padding: 8px 18px;
+
+  border: 1px solid #d1d4cd;
+
+  background: #ffffff;
+  color: #424842;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.premiumEditActions button:hover {
+  border-color: #26382e;
+}
+
+
+.premiumEditActions button:last-child {
+  border-color: #26382e;
+
+  background: #26382e;
+  color: #ffffff;
+}
+
+
+.premiumEditActions button:last-child:hover {
+  background: #18271f;
+  border-color: #18271f;
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes premiumPostsFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes premiumPostsDialogIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .premiumPostsBackdrop {
+    padding: 12px;
+  }
+
+  .premiumPostsDialog {
+    max-height: 92vh;
+  }
+
+  .premiumPostsTop {
+    height: 50px;
+    padding: 0 16px;
+  }
+
+  .premiumPostsHeader {
+    padding: 22px 20px 20px;
+
+    gap: 18px;
+  }
+
+  .premiumPostsTitle {
+    font-size: 30px;
+  }
+
+  .premiumPostsCountBox {
+    padding-left: 16px;
+  }
+
+  .premiumPostsCountBox span {
+    font-size: 13px;
+  }
+
+  .premiumPostsCountBox strong {
+    font-size: 17px;
+  }
+
+  .premiumPostsDivider {
+    margin: 0 20px;
+  }
+
+  .premiumPostsTools {
+    padding: 16px 20px 10px;
+  }
+
+  .premiumPostsContent {
+    padding: 10px 20px 20px;
+  }
+
+  .premiumPostCard {
+    grid-template-columns: 130px minmax(0, 1fr);
+
+    gap: 16px;
+  }
+
+  .premiumPostImage {
+    width: 130px;
+    height: 130px;
+  }
+
+  .premiumPostInfo h3 {
+    font-size: 19px;
+  }
+
+  .premiumPostPrice {
+    font-size: 18px;
+  }
+
+  .premiumPostDescription {
+    font-size: 14px;
+  }
+
+  .premiumPostsFooter {
+    padding: 0 20px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+  .premiumPostsBackdrop {
+    padding: 0;
+  }
+
+  .premiumPostsDialog {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+
+    border: none;
+  }
+
+  .premiumPostsHeader {
+    align-items: flex-start;
+    flex-direction: column;
+
+    padding: 20px 18px 18px;
+  }
+
+  .premiumPostsTitle {
+    font-size: 30px;
+  }
+
+  .premiumPostsCountBox {
+    padding-left: 0;
+
+    border-left: none;
+  }
+
+  .premiumPostsCountBox span {
+    font-size: 14px;
+  }
+
+  .premiumPostsCountBox strong {
+    font-size: 18px;
+  }
+
+  .premiumPostsDivider {
+    margin: 0 18px;
+  }
+
+  .premiumPostsTools {
+    padding: 14px 18px 10px;
+  }
+
+  .premiumPostsContent {
+    padding: 10px 18px 18px;
+  }
+
+  .premiumPostCard {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    padding: 12px;
+  }
+
+  .premiumPostImage {
+    width: 100%;
+    height: 210px;
+  }
+
+  .premiumPostTopInfo {
+    gap: 10px;
+  }
+
+  .premiumPostInfo h3 {
+    font-size: 21px;
+  }
+
+  .premiumPostPrice {
+    font-size: 19px;
+  }
+
+  .premiumPostDescription {
+    font-size: 15px;
+  }
+
+  .premiumPostMeta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .premiumPostStatusSelect {
+    width: 100%;
+  }
+
+  .premiumPostActions {
+    width: 100%;
+  }
+
+  .premiumPostActions button {
+    flex: 1;
+  }
+
+  .premiumPostsFooter {
+    min-height: 54px;
+
+    padding: 0 18px;
+  }
+
+  .premiumPostsFooter strong {
+    font-size: 9px;
+  }
+
+  .premiumPostsFooter button {
+    font-size: 13px;
+  }
+
+  .premiumEditBackdrop {
+    padding: 12px;
+  }
+
+  .premiumEditDialog {
+    max-height: 92vh;
+  }
+
+  .premiumEditTop {
+    padding: 18px 20px;
+  }
+
+  .premiumEditTop h3 {
+    font-size: 22px;
+  }
+
+  .premiumEditBody {
+    padding: 20px;
+  }
+
+  .premiumEditActions {
+    padding: 16px 20px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .premiumPostsTitle {
+    font-size: 27px;
+  }
+
+  .premiumPostsCountBox strong {
+    font-size: 17px;
+  }
+
+  .premiumPostImage {
+    height: 180px;
+  }
+
+  .premiumPostInfo h3 {
+    font-size: 19px;
+  }
+
+  .premiumPostDescription {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   CART MODAL
+   ========================================================= */
+
+.cartBackdrop,
+.ordersBackdrop,
+.profileBackdrop,
+.purchaseHistoryBackdrop,
+.notificationBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: transparent;
+}
+
+.cartDialog,
+.ordersDialog,
+.profileDialog,
+.purchaseHistoryDialog,
+.notificationDialog {
+  width: min(760px, 100%);
+  max-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fafaf7;
+  color: #20231f;
+  border: 1px solid #dedfd9;
+  box-shadow: 0 18px 50px rgba(25, 30, 26, 0.2);
+}
+
+
+/* =========================================================
+   COMMON HEADER
+   ========================================================= */
+
+.cartHeader,
+.ordersHeader,
+.profileHeader,
+.purchaseHistoryHeader,
+.notificationHeader {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 32px;
+  border-bottom: 1px solid #dedfd9;
+  background: #fafaf7;
+}
+
+.cartHeader h2,
+.ordersHeader h2,
+.profileHeader h2,
+.purchaseHistoryHeader h2,
+.notificationHeader h2 {
+  margin: 0;
+  color: #20231f;
+  font-size: 27px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.ordersHeader p,
+.purchaseHistoryHeader p,
+.notificationHeader p {
+  margin: 8px 0 0;
+  color: #777d76;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ordersHeader p strong,
+.purchaseHistoryHeader p strong {
+  color: #26382e;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.cartHeader>button,
+.ordersHeader>button,
+.profileHeader>button,
+.purchaseHistoryHeader>button,
+.notificationHeader>button {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  border: 1px solid #d5d8d2;
+  border-radius: 50%;
+  background: transparent;
+  color: #555c55;
+  font-family: inherit;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.cartHeader>button:hover,
+.ordersHeader>button:hover,
+.profileHeader>button:hover,
+.purchaseHistoryHeader>button:hover,
+.notificationHeader>button:hover {
+  background: #26382e;
+  border-color: #26382e;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CART
+   ========================================================= */
+
+.cartList {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 24px 32px;
+}
+
+.cartItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid #e4e5e0;
+}
+
+.cartItem:first-child {
+  padding-top: 0;
+}
+
+.cartItem:last-child {
+  border-bottom: none;
+}
+
+.cartItemInfo {
+  min-width: 0;
+}
+
+.cartItemInfo h3 {
+  margin: 0 0 8px;
+  color: #20231f;
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.cartItemInfo p {
+  margin: 5px 0;
+  color: #747a73;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cartItemInfo .cartItemPrice {
+  margin: 0 0 7px;
+  color: #26382e;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.cartUnavailable {
+  color: #9b5148 !important;
+  font-weight: 500;
+}
+
+.cartItemActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.cartItemActions button {
+  min-width: 72px;
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid #d2d5ce;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #3e443e;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cartItemActions button:first-child:hover {
+  border-color: #9b5148;
+  color: #9b5148;
+}
+
+.cartItemActions button:last-child {
+  border-color: #26382e;
+  background: #26382e;
+  color: #ffffff;
+}
+
+.cartItemActions button:last-child:hover {
+  border-color: #18271f;
+  background: #18271f;
+}
+
+.cartItemActions button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   CART EMPTY
+   ========================================================= */
+
+.cartEmpty {
+  padding: 70px 30px;
+  margin: 0;
+  text-align: center;
+  color: #777d76;
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   CART SUMMARY
+   ========================================================= */
+
+.cartSummary {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 22px 32px;
+  border-top: 1px solid #dedfd9;
+  background: #f3f4f0;
+}
+
+.cartSummary>div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cartSummary span {
+  color: #666d65;
+  font-size: 14px;
+}
+
+.cartSummary strong {
+  color: #303630;
+  font-size: 15px;
+}
+
+.cartSummary .cartTotal {
+  color: #26382e;
+  font-size: 22px;
+}
+
+.cartCheckoutButton {
+  width: calc(100% - 64px);
+  min-height: 50px;
+  margin: 0 32px 28px;
+  padding: 12px 20px;
+  border: 1px solid #26382e;
+  border-radius: 4px;
+  background: #26382e;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cartCheckoutButton:hover {
+  background: #18271f;
+  border-color: #18271f;
+}
+
+
+/* =========================================================
+   ORDERS
+   ========================================================= */
+
+.ordersList {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 24px 32px;
+}
+
+.orderItem {
+  padding: 24px 0;
+  border-bottom: 1px solid #e1e3dd;
+}
+
+.orderItem:first-child {
+  padding-top: 0;
+}
+
+.orderItem:last-child {
+  border-bottom: none;
+}
+
+.orderItem h3 {
+  margin: 0 0 13px;
+  color: #20231f;
+  font-size: 19px;
+  font-weight: 650;
+}
+
+.orderItem p {
+  margin: 7px 0;
+  color: #686f68;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.orderItem p strong {
+  color: #26382e;
+}
+
+.orderItem button {
+  margin-top: 12px;
+  min-height: 42px;
+  padding: 9px 17px;
+  border: 1px solid #26382e;
+  border-radius: 4px;
+  background: #26382e;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.orderItem button:hover {
+  background: #18271f;
+  border-color: #18271f;
+}
+
+.ordersEmpty,
+.purchaseHistoryEmpty,
+.notificationEmpty {
+  padding: 70px 30px;
+  text-align: center;
+}
+
+.ordersEmpty p,
+.purchaseHistoryEmpty p,
+.notificationEmpty p {
+  margin: 0 0 8px;
+  color: #303630;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ordersEmpty span,
+.purchaseHistoryEmpty span,
+.notificationEmpty span {
+  color: #858b84;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ordersFooter,
+.purchaseHistoryFooter,
+.notificationFooter {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 18px 32px;
+  border-top: 1px solid #dedfd9;
+  background: #f3f4f0;
+}
+
+.ordersFooter button,
+.purchaseHistoryFooter button,
+.notificationFooter button {
+  min-width: 90px;
+  min-height: 42px;
+  padding: 8px 18px;
+  border: 1px solid #d0d3cc;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #414741;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.ordersFooter button:hover,
+.purchaseHistoryFooter button:hover,
+.notificationFooter button:hover {
+  border-color: #26382e;
+  color: #26382e;
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.profileDialog {
+  width: min(620px, 100%);
+}
+
+.profileHeader {
+  padding-bottom: 24px;
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 32px;
+}
+
+.profileImage,
+.profileImagePlaceholder {
+  width: 92px;
+  height: 92px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.profileImage {
+  display: block;
+  object-fit: cover;
+  border: 1px solid #d8dbd4;
+}
+
+.profileImagePlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef0eb;
+  color: #687068;
+  font-size: 32px;
+}
+
+.profileDetails {
+  min-width: 0;
+}
+
+.profileDetails h3 {
+  margin: 0 0 7px;
+  color: #20231f;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.profileDetails p {
+  margin: 0;
+  color: #747b73;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.profileStats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid #dedfd9;
+  background: #f3f4f0;
+}
+
+.profileStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  gap: 7px;
+}
+
+.profileStat+.profileStat {
+  border-left: 1px solid #dedfd9;
+}
+
+.profileStat strong {
+  color: #26382e;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.profileStat span {
+  color: #747b73;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   PURCHASE HISTORY
+   ========================================================= */
+
+.purchaseHistoryList {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 24px 32px;
+}
+
+.purchaseHistoryItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid #e1e3dd;
+}
+
+.purchaseHistoryItem:first-child {
+  padding-top: 0;
+}
+
+.purchaseHistoryItem:last-child {
+  border-bottom: none;
+}
+
+.purchaseHistoryItem h3 {
+  margin: 0 0 11px;
+  color: #20231f;
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.purchaseHistoryItem p {
+  margin: 6px 0;
+  color: #70776f;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.purchaseHistoryItem .purchaseHistoryPrice {
+  margin-top: 10px;
+  color: #26382e;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.purchaseHistoryStatus {
+  flex-shrink: 0;
+  padding: 6px 11px;
+  border: 1px solid #d5d8d2;
+  border-radius: 3px;
+  background: #f5f6f2;
+  color: #596159;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.purchaseHistoryStatusReserved {
+  border-color: #d9cba5;
+  background: #f7f3e7;
+  color: #796a3f;
+}
+
+.purchaseHistoryStatusSold {
+  border-color: #c6d6c8;
+  background: #eef5ef;
+  color: #46614c;
+}
+
+
+/* =========================================================
+   NOTIFICATION
+   ========================================================= */
+
+.notificationList {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 24px 32px;
+}
+
+.notificationItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e1e3dd;
+}
+
+.notificationItem:first-child {
+  padding-top: 0;
+}
+
+.notificationItem:last-child {
+  border-bottom: none;
+}
+
+.notificationItem h3 {
+  margin: 0 0 9px;
+  color: #20231f;
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.notificationItem p {
+  margin: 5px 0;
+  color: #4f574f;
+  font-size: 14px;
+}
+
+.notificationItem span {
+  display: block;
+  margin-top: 7px;
+  color: #858b84;
+  font-size: 13px;
+}
+
+.notificationUnread {
+  padding-left: 14px;
+  border-left: 3px solid #26382e;
+}
+
+.notificationRead {
+  opacity: 0.7;
+}
+
+.notificationItem button {
+  flex-shrink: 0;
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 1px solid #26382e;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #26382e;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.notificationItem button:hover {
+  background: #26382e;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.cartList::-webkit-scrollbar,
+.ordersList::-webkit-scrollbar,
+.purchaseHistoryList::-webkit-scrollbar,
+.notificationList::-webkit-scrollbar {
+  width: 7px;
+}
+
+.cartList::-webkit-scrollbar-track,
+.ordersList::-webkit-scrollbar-track,
+.purchaseHistoryList::-webkit-scrollbar-track,
+.notificationList::-webkit-scrollbar-track {
+  background: #f1f2ee;
+}
+
+.cartList::-webkit-scrollbar-thumb,
+.ordersList::-webkit-scrollbar-thumb,
+.purchaseHistoryList::-webkit-scrollbar-thumb,
+.notificationList::-webkit-scrollbar-thumb {
+  background: #c8ccc5;
+  border-radius: 10px;
+}
+
+.cartList::-webkit-scrollbar-thumb:hover,
+.ordersList::-webkit-scrollbar-thumb:hover,
+.purchaseHistoryList::-webkit-scrollbar-thumb:hover,
+.notificationList::-webkit-scrollbar-thumb:hover {
+  background: #9fa69e;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .cartBackdrop,
+  .ordersBackdrop,
+  .profileBackdrop,
+  .purchaseHistoryBackdrop,
+  .notificationBackdrop {
+    padding: 15px;
+  }
+
+  .cartDialog,
+  .ordersDialog,
+  .profileDialog,
+  .purchaseHistoryDialog,
+  .notificationDialog {
+    width: 100%;
+    max-height: calc(100vh - 30px);
+  }
+
+  .cartHeader,
+  .ordersHeader,
+  .profileHeader,
+  .purchaseHistoryHeader,
+  .notificationHeader {
+    padding: 22px 20px;
+  }
+
+  .cartHeader h2,
+  .ordersHeader h2,
+  .profileHeader h2,
+  .purchaseHistoryHeader h2,
+  .notificationHeader h2 {
+    font-size: 23px;
+  }
+
+  .cartList,
+  .ordersList,
+  .purchaseHistoryList,
+  .notificationList {
+    padding: 20px;
+  }
+
+  .cartItem {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cartItemActions {
+    width: 100%;
+  }
+
+  .cartItemActions button {
+    flex: 1;
+  }
+
+  .cartSummary {
+    padding: 18px 20px;
+  }
+
+  .cartCheckoutButton {
+    width: calc(100% - 40px);
+    margin: 0 20px 20px;
+  }
+
+  .ordersFooter,
+  .purchaseHistoryFooter,
+  .notificationFooter {
+    padding: 15px 20px;
+  }
+
+  .profileInfo {
+    padding: 25px 20px;
+  }
+
+  .profileImage,
+  .profileImagePlaceholder {
+    width: 75px;
+    height: 75px;
+  }
+
+  .profileDetails h3 {
+    font-size: 20px;
+  }
+
+  .purchaseHistoryItem {
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .notificationItem {
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   FAVORITES / สินค้าที่ถูกใจ
+   ========================================================= */
+
+.favoritesBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: transparent;
+}
+
+.favoritesDialog {
+  width: min(760px, 100%);
+  max-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fafaf7;
+  color: #20231f;
+  border: 1px solid #dedfd9;
+  box-shadow: 0 18px 50px rgba(25, 30, 26, 0.2);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.favoritesHeader {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 32px;
+  border-bottom: 1px solid #dedfd9;
+  background: #fafaf7;
+}
+
+.favoritesHeader h2 {
+  margin: 0;
+  color: #20231f;
+  font-size: 27px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.favoritesHeader button {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  border: 1px solid #d5d8d2;
+  border-radius: 50%;
+  background: transparent;
+  color: #555c55;
+  font-family: inherit;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.favoritesHeader button:hover {
+  background: #26382e;
+  border-color: #26382e;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   COUNT
+   ========================================================= */
+
+.favoritesCount {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 18px 32px;
+  border-bottom: 1px solid #e3e4df;
+  color: #70776f;
+  background: #f5f6f2;
+  font-size: 14px;
+}
+
+.favoritesCount strong {
+  color: #26382e;
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   LIST
+   ========================================================= */
+
+.favoritesList {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 8px 32px;
+}
+
+.favoriteItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid #e1e3dd;
+}
+
+.favoriteItem:last-child {
+  border-bottom: none;
+}
+
+.favoriteItemInfo {
+  min-width: 0;
+}
+
+.favoriteItemInfo h3 {
+  margin: 0 0 8px;
+  color: #20231f;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 650;
+}
+
+.favoriteItemInfo p {
+  margin: 5px 0;
+  color: #747b73;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.favoriteItemInfo .favoritePrice {
+  margin: 0 0 7px;
+  color: #26382e;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   REMOVE BUTTON
+   ========================================================= */
+
+.favoriteRemoveButton {
+  flex-shrink: 0;
+  min-width: 85px;
+  min-height: 40px;
+  padding: 8px 15px;
+  border: 1px solid #d5d8d2;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #666d65;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.favoriteRemoveButton:hover {
+  border-color: #9b5148;
+  background: #fffafa;
+  color: #9b5148;
+}
+
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.favoritesEmpty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.favoritesEmpty p {
+  margin: 0 0 9px;
+  color: #303630;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.favoritesEmpty span {
+  color: #858b84;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.favoritesActions {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 18px 32px;
+  border-top: 1px solid #dedfd9;
+  background: #f3f4f0;
+}
+
+.favoritesActions button {
+  min-width: 90px;
+  min-height: 42px;
+  padding: 8px 18px;
+  border: 1px solid #d0d3cc;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #414741;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.favoritesActions button:hover {
+  border-color: #26382e;
+  color: #26382e;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.favoritesList::-webkit-scrollbar {
+  width: 7px;
+}
+
+.favoritesList::-webkit-scrollbar-track {
+  background: #f1f2ee;
+}
+
+.favoritesList::-webkit-scrollbar-thumb {
+  background: #c8ccc5;
+  border-radius: 10px;
+}
+
+.favoritesList::-webkit-scrollbar-thumb:hover {
+  background: #9fa69e;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .favoritesBackdrop {
+    padding: 15px;
+  }
+
+  .favoritesDialog {
+    width: 100%;
+    max-height: calc(100vh - 30px);
+  }
+
+  .favoritesHeader {
+    padding: 22px 20px;
+  }
+
+  .favoritesHeader h2 {
+    font-size: 23px;
+  }
+
+  .favoritesCount {
+    padding: 16px 20px;
+  }
+
+  .favoritesList {
+    padding: 8px 20px;
+  }
+
+  .favoriteItem {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .favoriteRemoveButton {
+    width: 100%;
+  }
+
+  .favoritesActions {
+    padding: 15px 20px;
+  }
+}
+
+/* =========================================================
+   POST SALE MODAL
+   ========================================================= */
+
+.sellDialogBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: transparent;
+}
+
+.sellDialog {
+  width: min(700px, 100%);
+  max-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fafaf7;
+  color: #20231f;
+  border: 1px solid #dedfd9;
+  box-shadow: 0 18px 50px rgba(25, 30, 26, 0.22);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.sellDialogHeader {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 27px 34px;
+  border-bottom: 1px solid #dedfd9;
+  background: #fafaf7;
+}
+
+.sellDialogHeader h2 {
+  margin: 0;
+  color: #20231f;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.sellDialogClose {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  border: 1px solid #d5d8d2;
+  border-radius: 50%;
+  background: transparent;
+  color: #555c55;
+  font-family: inherit;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.sellDialogClose:hover {
+  background: #26382e;
+  border-color: #26382e;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.sellForm {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 30px 34px;
+  overflow-y: auto;
+}
+
+.sellForm label {
+  margin-top: 10px;
+  color: #343a34;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.sellForm label:first-child {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+   ========================================================= */
+
+.sellForm input,
+.sellForm select,
+.sellForm textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d3d6cf;
+  border-radius: 5px;
+  outline: none;
+  background: #ffffff;
+  color: #20231f;
+  font-family: inherit;
+  font-size: 15px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.sellForm input,
+.sellForm select {
+  height: 52px;
+  padding: 0 15px;
+}
+
+.sellForm textarea {
+  min-height: 130px;
+  padding: 13px 15px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.sellForm input::placeholder,
+.sellForm textarea::placeholder {
+  color: #a0a59e;
+}
+
+.sellForm input:focus,
+.sellForm select:focus,
+.sellForm textarea:focus {
+  border-color: #26382e;
+  box-shadow: 0 0 0 3px rgba(38, 56, 46, 0.08);
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   PRICE
+   ========================================================= */
+
+#sellPrice {
+  font-weight: 500;
+}
+
+#sellPrice::-webkit-inner-spin-button,
+#sellPrice::-webkit-outer-spin-button {
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   FILE UPLOAD
+   ========================================================= */
+
+#sellImage {
+  height: auto;
+  min-height: 52px;
+  padding: 13px 15px;
+  cursor: pointer;
+}
+
+#sellImage::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 13px;
+  border: 1px solid #d0d3cc;
+  border-radius: 4px;
+  background: #f3f4f0;
+  color: #3f453f;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#sellImage::file-selector-button:hover {
+  border-color: #26382e;
+  color: #26382e;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.sellFormError {
+  margin: 7px 0 0;
+  padding: 12px 14px;
+  border: 1px solid #e0c9c5;
+  background: #fff8f7;
+  color: #984f46;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SUBMIT
+   ========================================================= */
+
+.sellFormSubmit {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 15px;
+  padding: 12px 20px;
+  border: 1px solid #26382e;
+  border-radius: 4px;
+  background: #26382e;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sellFormSubmit:hover {
+  background: #18271f;
+  border-color: #18271f;
+}
+
+.sellFormSubmit:active {
+  transform: translateY(1px);
+}
+
+.sellFormSubmit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* =========================================================
+   FORM SCROLLBAR
+   ========================================================= */
+
+.sellForm::-webkit-scrollbar {
+  width: 7px;
+}
+
+.sellForm::-webkit-scrollbar-track {
+  background: #f1f2ee;
+}
+
+.sellForm::-webkit-scrollbar-thumb {
+  background: #c8ccc5;
+  border-radius: 10px;
+}
+
+.sellForm::-webkit-scrollbar-thumb:hover {
+  background: #9fa69e;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .sellDialogBackdrop {
+    padding: 15px;
+  }
+
+  .sellDialog {
+    width: 100%;
+    max-height: calc(100vh - 30px);
+  }
+
+  .sellDialogHeader {
+    padding: 22px 20px;
+  }
+
+  .sellDialogHeader h2 {
+    font-size: 24px;
+  }
+
+  .sellForm {
+    gap: 8px;
+    padding: 24px 20px;
+  }
+
+  .sellForm label {
+    font-size: 14px;
+  }
+
+  .sellForm input,
+  .sellForm select {
+    height: 50px;
+  }
+
+  .sellForm textarea {
+    min-height: 120px;
+  }
+
+  .sellFormSubmit {
+    min-height: 50px;
   }
 }

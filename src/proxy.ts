@@ -1,14 +1,10 @@
-import { withAuth } from "next-auth/middleware";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export default withAuth({
-  pages: {
-    signIn: "/",
-  },
-  callbacks: {
-    authorized: ({ token }) => Boolean(token),
-  },
-});
+export function proxy(_request: NextRequest) {
+  return NextResponse.next();
+}
 
 export const config = {
-  matcher: ["/Shop/:path*"],
+  matcher: [],
 };
